@@ -581,7 +581,7 @@ def _kisisel_veri_kontrolu():
     kok = os.path.dirname(BURASI)
     atla = ("cikti", "__pycache__", "chrome-projili", "chrome-profili",
             "ornek")
-    desen = re.compile(r"\d{2}2709\d{3}")
+    desen = re.compile(r"(?<!\d)\d{2}2709\d{3}(?!\d)")
     bulgu = []
     for dizin, altlar, dosyalar in os.walk(kok):
         altlar[:] = [a for a in altlar if a not in atla]
@@ -613,7 +613,7 @@ def _kisisel_veri_kontrolu():
     if os.path.exists(ornek):
         icerik = io.open(ornek, encoding="utf-8").read()
         kontrol("örnek panoda gerçek numara yok", [],
-                sorted(set(re.findall(r"\d{2}2709\d{3}", icerik))))
+                sorted(set(desen.findall(icerik))))
 
 
 def _paylasim_kapsami_kontrolu():
