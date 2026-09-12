@@ -1,0 +1,111 @@
+{
+ "surum": 1,
+ "_aciklama": "Bölüm profili: yönetmelikten gelmeyen, bölüm kararı olan her şey. Yeni bir bölüm için 'python kurulum.py' ile üretilir.",
+ "bolum": {
+  "universite": "Selçuk Üniversitesi",
+  "fakulte": "Fen Fakültesi",
+  "ad": "Matematik",
+  "program_yili": 4,
+  "ogretim_yili": "2026-2027"
+ },
+ "plan": {
+  "donem_akts": {
+   "1": 30,
+   "2": 30,
+   "3": 30,
+   "4": 30,
+   "5": 30,
+   "6": 30,
+   "7": 32,
+   "8": 32
+  },
+  "_aciklama": "1-6. dönemler 30'ar AKTS; 7. ve 8. dönemler TOS ve (*) işaretli derslerle 32'şer. Toplam 244; yönetmelik asgarisi 240 (MADDE 8/4)."
+ },
+ "tos": {
+  "akts": 4,
+  "azami_adet": 1,
+  "_aciklama": "Tüm bölümlere açık ortak seçmeliler; ders adının sonunda (*). Bir kısmı başka fakültelerin dersi olduğu için bölüm katalogunda hiç görünmez, bu yüzden liste olarak tutulur.",
+  "dersler": {
+   "2615580": "ARKEOLOJİ VE ARKEOMETRİ I",
+   "2703375": "YARATICI DÜŞÜNME VE PROBLEM ÇÖZME TEKNİKLERİ",
+   "2703376": "BÜYÜK BULUŞLARIN ARDINDAKİ YOLCULUK",
+   "2703377": "AKADEMİK BAŞARI VE YAŞAM STRATEJİLERİ",
+   "2705760": "YAPAY ZEKAYA GİRİŞ I",
+   "2705761": "FİNANSAL OKURYAZARLIK",
+   "2707756": "SESSİZ TEHLİKELER: ZEHİRLER",
+   "2709746": "ÖĞRENME PSİKOLOJİSİ",
+   "2709747": "MATEMATİK VE OYUN",
+   "2709748": "BİLİM, SANAT VE TEKNOLOJİDE MATEMATİK",
+   "2709749": "TÜRK DÜNYASI ÂŞIKLIK GELENEĞİ",
+   "2709846": "ÖĞRETME KURAM VE YAKLAŞIMLARI",
+   "2709849": "ANADOLU ÂŞIKLIK GELENEĞİ"
+  }
+ },
+ "kohort": {
+  "sonradan_eklenen_dersler": {
+   "2709163": 2024,
+   "2709263": 2024,
+   "2709547": 2024,
+   "2709647": 2024
+  },
+  "acik_kapatma_yariyili": 5,
+  "_aciklama": "Değer = dersin geçerli olduğu EN ERKEN giriş yılı. Bu yıldan önce giren öğrenci dersi almaz; eksik kalan AKTS'yi acik_kapatma_yariyili seçmeli havuzundan fazladan ders alarak kapatır. Son 4-5 yılın müfredat belgesi verilirse bu liste 'python mufredat.py --arsiv' ile kendiliğinden çıkar."
+ },
+ "donem_kompozisyonu": {
+  "7": {
+   "zorunlu_kodlar": [
+    "2709753"
+   ],
+   "tos_adedi": 1
+  }
+ },
+ "program": {
+  "sayfa_adi": "I. Öğretim",
+  "gunler": [
+   "PAZARTESİ",
+   "SALI",
+   "ÇARŞAMBA",
+   "PERŞEMBE",
+   "CUMA"
+  ],
+  "saat_sutunlari": {
+   "C": "08:30-09:15",
+   "D": "09:25-10:10",
+   "E": "10:20-11:05",
+   "F": "11:15-12:00",
+   "G": "12:10-12:55",
+   "I": "13:15-14:00",
+   "J": "14:10-14:55",
+   "K": "15:05-15:50",
+   "L": "16:00-16:45",
+   "M": "16:55-17:40"
+  },
+  "tos_blok_adi": "TOS",
+  "asenkron_dersler": [
+   "ATATURK ILK VE INK TARIHI 1",
+   "INGILIZCE 1",
+   "TURK DILI 1"
+  ],
+  "esnek_dersler": [
+   "MATEMATIK UYGULAMALARI 1"
+  ],
+  "uygulamali_dersler": [
+   "FIZIK LABORATUVARI 1",
+   "FIZIK LABORATUVARI 2"
+  ],
+  "_aciklama": "asenkron_dersler, esnek_dersler ve uygulamali_dersler ders adı ANAHTARIDIR (yonetmelik.ders_adi_anahtari ile sadeleştirilmiş hâli). asenkron/esnek dersler sabit saatte buluşmadığı için çakışma üretmezler. uygulamali_dersler ise devamsızlık hakkı %20 olan (laboratuvar/uygulama) derslerdir; MADDE 10/1."
+ },
+ "kaynaklar": {
+  "mufredat": {
+   "dosya": "veri/mufredat.docx",
+   "arsiv_klasoru": "veri/mufredat/",
+   "aciklama": "Bölümün 'Okutulacak Dersler' belgesi (docx). Son 4-5 yılınki veri/mufredat/<yıl>.docx olarak konursa AKTS değişimleri ve sonradan eklenen dersler kendiliğinden çıkar.",
+   "zorunlu": true
+  },
+  "ders_programi": {
+   "dosya": "veri/ders_programi.xlsx",
+   "aciklama": "Bu yarıyılın ders programı (xlsx). Yoksa çakışma denetimi yapılmaz, diğer her şey çalışır.",
+   "zorunlu": false
+  }
+ }
+}

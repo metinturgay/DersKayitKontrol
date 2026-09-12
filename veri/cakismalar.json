@@ -1,0 +1,1725 @@
+{
+ "dersler": {
+  "Analitik Geometri 1": {
+   "saatler": [
+    "PAZARTESİ 08:30-09:15",
+    "PAZARTESİ 09:25-10:10",
+    "PERŞEMBE 13:15-14:00",
+    "PERŞEMBE 14:10-14:55"
+   ],
+   "saat_sayisi": 4,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M3"
+   ],
+   "siniflar": [
+    2
+   ]
+  },
+  "Analiz 1": {
+   "saatler": [
+    "PAZARTESİ 15:05-15:50",
+    "PAZARTESİ 16:00-16:45",
+    "PERŞEMBE 08:30-09:15",
+    "PERŞEMBE 09:25-10:10",
+    "ÇARŞAMBA 15:05-15:50",
+    "ÇARŞAMBA 16:00-16:45"
+   ],
+   "saat_sayisi": 6,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M1",
+    "M3"
+   ],
+   "siniflar": [
+    1
+   ]
+  },
+  "Analiz 3": {
+   "saatler": [
+    "PAZARTESİ 13:15-14:00",
+    "PAZARTESİ 14:10-14:55",
+    "ÇARŞAMBA 10:20-11:05",
+    "ÇARŞAMBA 11:15-12:00"
+   ],
+   "saat_sayisi": 4,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M2",
+    "M3"
+   ],
+   "siniflar": [
+    2
+   ]
+  },
+  "Atatürk İlk. ve İnk. Tarihi 1": {
+   "saatler": [
+    "PAZARTESİ 10:20-11:05",
+    "PAZARTESİ 11:15-12:00"
+   ],
+   "saat_sayisi": 2,
+   "gruplar": [],
+   "asenkron": true,
+   "esnek": false,
+   "derslikler": [
+    "M3"
+   ],
+   "siniflar": [
+    1
+   ]
+  },
+  "Bağlantılı Uzaylar": {
+   "saatler": [
+    "ÇARŞAMBA 09:25-10:10",
+    "ÇARŞAMBA 10:20-11:05",
+    "ÇARŞAMBA 11:15-12:00"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M5"
+   ],
+   "siniflar": [
+    4
+   ]
+  },
+  "Bilgisayar Programlama 1": {
+   "saatler": [
+    "SALI 08:30-09:15",
+    "SALI 09:25-10:10",
+    "ÇARŞAMBA 16:00-16:45",
+    "ÇARŞAMBA 16:55-17:40"
+   ],
+   "saat_sayisi": 4,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "Lab."
+   ],
+   "siniflar": [
+    2
+   ]
+  },
+  "Cebir 1": {
+   "saatler": [
+    "SALI 10:20-11:05",
+    "SALI 11:15-12:00",
+    "ÇARŞAMBA 10:20-11:05",
+    "ÇARŞAMBA 11:15-12:00"
+   ],
+   "saat_sayisi": 4,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M1",
+    "M2"
+   ],
+   "siniflar": [
+    3
+   ]
+  },
+  "Diferensiyel Denklemler 1": {
+   "saatler": [
+    "PAZARTESİ 10:20-11:05",
+    "PAZARTESİ 11:15-12:00",
+    "SALI 10:20-11:05",
+    "SALI 11:15-12:00"
+   ],
+   "saat_sayisi": 4,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M1",
+    "M3"
+   ],
+   "siniflar": [
+    2
+   ]
+  },
+  "Diferensiyel Geometri 1": {
+   "saatler": [
+    "PAZARTESİ 13:15-14:00",
+    "PAZARTESİ 14:10-14:55",
+    "ÇARŞAMBA 13:15-14:00",
+    "ÇARŞAMBA 14:10-14:55"
+   ],
+   "saat_sayisi": 4,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M2"
+   ],
+   "siniflar": [
+    3
+   ]
+  },
+  "Dinamik Sistemler 1": {
+   "saatler": [
+    "PERŞEMBE 09:25-10:10",
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M4"
+   ],
+   "siniflar": [
+    4
+   ]
+  },
+  "Eğriler Teorisi": {
+   "saatler": [
+    "PERŞEMBE 09:25-10:10",
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M5"
+   ],
+   "siniflar": [
+    3
+   ]
+  },
+  "Fark Denklemleri 1": {
+   "saatler": [
+    "ÇARŞAMBA 13:15-14:00",
+    "ÇARŞAMBA 14:10-14:55",
+    "ÇARŞAMBA 15:05-15:50"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M5"
+   ],
+   "siniflar": [
+    4
+   ]
+  },
+  "Fizik 1": {
+   "saatler": [
+    "PERŞEMBE 13:15-14:00",
+    "PERŞEMBE 14:10-14:55",
+    "ÇARŞAMBA 08:30-09:15",
+    "ÇARŞAMBA 09:25-10:10"
+   ],
+   "saat_sayisi": 4,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M1",
+    "M2"
+   ],
+   "siniflar": [
+    1
+   ]
+  },
+  "Fizik Laboratuvarı 1": {
+   "saatler": [
+    "CUMA 14:10-14:55",
+    "CUMA 15:05-15:50",
+    "CUMA 16:00-16:45",
+    "CUMA 16:55-17:40"
+   ],
+   "saat_sayisi": 4,
+   "gruplar": [
+    "A",
+    "B"
+   ],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [],
+   "siniflar": [
+    1
+   ]
+  },
+  "Fonksiyonel Analiz 1": {
+   "saatler": [
+    "PAZARTESİ 09:25-10:10",
+    "PAZARTESİ 10:20-11:05",
+    "PAZARTESİ 11:15-12:00"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M2"
+   ],
+   "siniflar": [
+    3
+   ]
+  },
+  "Fuzzy Topoloji 1": {
+   "saatler": [
+    "SALI 13:15-14:00",
+    "SALI 14:10-14:55",
+    "SALI 15:05-15:50"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M4"
+   ],
+   "siniflar": [
+    3
+   ]
+  },
+  "Kodlama Teorisine Giriş": {
+   "saatler": [
+    "PAZARTESİ 09:25-10:10",
+    "PAZARTESİ 10:20-11:05",
+    "PAZARTESİ 11:15-12:00"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M4"
+   ],
+   "siniflar": [
+    4
+   ]
+  },
+  "Kompleks Analiz 1": {
+   "saatler": [
+    "PAZARTESİ 15:05-15:50",
+    "PAZARTESİ 16:00-16:45",
+    "ÇARŞAMBA 08:30-09:15",
+    "ÇARŞAMBA 09:25-10:10"
+   ],
+   "saat_sayisi": 4,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M1",
+    "M2"
+   ],
+   "siniflar": [
+    3
+   ]
+  },
+  "Kısmi Türevli Dif. Denk. 1": {
+   "saatler": [
+    "SALI 13:15-14:00",
+    "SALI 14:10-14:55",
+    "SALI 15:05-15:50"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M2"
+   ],
+   "siniflar": [
+    3
+   ]
+  },
+  "Lineer Cebir 1": {
+   "saatler": [
+    "PAZARTESİ 13:15-14:00",
+    "PAZARTESİ 14:10-14:55",
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ],
+   "saat_sayisi": 4,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M1",
+    "M3"
+   ],
+   "siniflar": [
+    1
+   ]
+  },
+  "Lorentz Geometri 1": {
+   "saatler": [
+    "CUMA 09:25-10:10",
+    "CUMA 10:20-11:05",
+    "CUMA 11:15-12:00"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M4"
+   ],
+   "siniflar": [
+    4
+   ]
+  },
+  "Matematik Uygulamaları 1": {
+   "saatler": [
+    "CUMA 08:30-09:15",
+    "CUMA 12:10-12:55",
+    "CUMA 13:15-14:00",
+    "CUMA 14:10-14:55",
+    "CUMA 15:05-15:50",
+    "CUMA 16:00-16:45",
+    "CUMA 16:55-17:40",
+    "PAZARTESİ 08:30-09:15",
+    "PAZARTESİ 12:10-12:55",
+    "PAZARTESİ 13:15-14:00",
+    "PAZARTESİ 14:10-14:55",
+    "PAZARTESİ 15:05-15:50",
+    "PAZARTESİ 16:00-16:45",
+    "PAZARTESİ 16:55-17:40",
+    "PERŞEMBE 08:30-09:15",
+    "PERŞEMBE 12:10-12:55",
+    "PERŞEMBE 16:00-16:45",
+    "PERŞEMBE 16:55-17:40",
+    "SALI 08:30-09:15",
+    "SALI 12:10-12:55",
+    "SALI 15:05-15:50",
+    "SALI 16:00-16:45",
+    "SALI 16:55-17:40",
+    "ÇARŞAMBA 08:30-09:15",
+    "ÇARŞAMBA 12:10-12:55",
+    "ÇARŞAMBA 16:00-16:45",
+    "ÇARŞAMBA 16:55-17:40"
+   ],
+   "saat_sayisi": 27,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": true,
+   "derslikler": [],
+   "siniflar": [
+    4
+   ]
+  },
+  "Matris Matematiği 1": {
+   "saatler": [
+    "SALI 13:15-14:00",
+    "SALI 14:10-14:55",
+    "SALI 15:05-15:50"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M5"
+   ],
+   "siniflar": [
+    3
+   ]
+  },
+  "Mesleki İngilizce 1": {
+   "saatler": [
+    "PERŞEMBE 13:15-14:00",
+    "PERŞEMBE 14:10-14:55",
+    "PERŞEMBE 15:05-15:50"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M5"
+   ],
+   "siniflar": [
+    4
+   ]
+  },
+  "Müzik ve Matematik": {
+   "saatler": [
+    "SALI 09:25-10:10",
+    "SALI 10:20-11:05",
+    "SALI 11:15-12:00"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M4"
+   ],
+   "siniflar": [
+    4
+   ]
+  },
+  "Nümerik Analiz 1": {
+   "saatler": [
+    "PERŞEMBE 09:25-10:10",
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M2"
+   ],
+   "siniflar": [
+    3
+   ]
+  },
+  "Olasılık ve İstatistik 1": {
+   "saatler": [
+    "PERŞEMBE 09:25-10:10",
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "D2"
+   ],
+   "siniflar": [
+    2
+   ]
+  },
+  "Ortogonal Polinomlar": {
+   "saatler": [
+    "CUMA 09:25-10:10",
+    "CUMA 10:20-11:05",
+    "CUMA 11:15-12:00"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M5"
+   ],
+   "siniflar": [
+    4
+   ]
+  },
+  "Riemann Manifoldlar": {
+   "saatler": [
+    "PERŞEMBE 09:25-10:10",
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M1"
+   ],
+   "siniflar": [
+    4
+   ]
+  },
+  "Sayılar Teorisi 1": {
+   "saatler": [
+    "CUMA 09:25-10:10",
+    "CUMA 10:20-11:05",
+    "CUMA 11:15-12:00"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M3"
+   ],
+   "siniflar": [
+    3
+   ]
+  },
+  "Sonlu Farklar Yöntemi": {
+   "saatler": [
+    "ÇARŞAMBA 13:15-14:00",
+    "ÇARŞAMBA 14:10-14:55",
+    "ÇARŞAMBA 15:05-15:50"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M4"
+   ],
+   "siniflar": [
+    4
+   ]
+  },
+  "Soyut Matematik 1": {
+   "saatler": [
+    "PERŞEMBE 15:05-15:50",
+    "PERŞEMBE 16:00-16:45",
+    "ÇARŞAMBA 13:15-14:00",
+    "ÇARŞAMBA 14:10-14:55"
+   ],
+   "saat_sayisi": 4,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M1"
+   ],
+   "siniflar": [
+    1
+   ]
+  },
+  "Spektral Graf Teori 1": {
+   "saatler": [
+    "PAZARTESİ 09:25-10:10",
+    "PAZARTESİ 10:20-11:05",
+    "PAZARTESİ 11:15-12:00"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M5"
+   ],
+   "siniflar": [
+    4
+   ]
+  },
+  "TOS": {
+   "saatler": [
+    "SALI 13:15-14:00",
+    "SALI 14:10-14:55"
+   ],
+   "saat_sayisi": 2,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [],
+   "siniflar": [
+    4
+   ]
+  },
+  "Topoloji 1": {
+   "saatler": [
+    "SALI 13:15-14:00",
+    "SALI 14:10-14:55",
+    "ÇARŞAMBA 13:15-14:00",
+    "ÇARŞAMBA 14:10-14:55"
+   ],
+   "saat_sayisi": 4,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M3"
+   ],
+   "siniflar": [
+    2
+   ]
+  },
+  "Topolojik Gruplar": {
+   "saatler": [
+    "ÇARŞAMBA 09:25-10:10",
+    "ÇARŞAMBA 10:20-11:05",
+    "ÇARŞAMBA 11:15-12:00"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M4"
+   ],
+   "siniflar": [
+    4
+   ]
+  },
+  "Türk Dili 1": {
+   "saatler": [
+    "SALI 08:30-09:15",
+    "SALI 09:25-10:10"
+   ],
+   "saat_sayisi": 2,
+   "gruplar": [],
+   "asenkron": true,
+   "esnek": false,
+   "derslikler": [
+    "M2"
+   ],
+   "siniflar": [
+    1
+   ]
+  },
+  "Uygulamalı Matematik": {
+   "saatler": [
+    "PERŞEMBE 13:15-14:00",
+    "PERŞEMBE 14:10-14:55",
+    "PERŞEMBE 15:05-15:50"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M2"
+   ],
+   "siniflar": [
+    3
+   ]
+  },
+  "Yaklaşım Kümeler Teorisi 1": {
+   "saatler": [
+    "PERŞEMBE 13:15-14:00",
+    "PERŞEMBE 14:10-14:55",
+    "PERŞEMBE 15:05-15:50"
+   ],
+   "saat_sayisi": 3,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M4"
+   ],
+   "siniflar": [
+    4
+   ]
+  },
+  "İngilizce 1": {
+   "saatler": [
+    "ÇARŞAMBA 10:20-11:05",
+    "ÇARŞAMBA 11:15-12:00"
+   ],
+   "saat_sayisi": 2,
+   "gruplar": [],
+   "asenkron": true,
+   "esnek": false,
+   "derslikler": [
+    "M3"
+   ],
+   "siniflar": [
+    1
+   ]
+  },
+  "İngilizce 3": {
+   "saatler": [
+    "PAZARTESİ 15:05-15:50",
+    "PAZARTESİ 16:00-16:45"
+   ],
+   "saat_sayisi": 2,
+   "gruplar": [],
+   "asenkron": false,
+   "esnek": false,
+   "derslikler": [
+    "M3"
+   ],
+   "siniflar": [
+    2
+   ]
+  }
+ },
+ "cakismalar": [
+  {
+   "ders_a": "Bağlantılı Uzaylar",
+   "ders_b": "Topolojik Gruplar",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "ÇARŞAMBA 09:25-10:10",
+    "ÇARŞAMBA 10:20-11:05",
+    "ÇARŞAMBA 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Dinamik Sistemler 1",
+   "ders_b": "Eğriler Teorisi",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "PERŞEMBE 09:25-10:10",
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Dinamik Sistemler 1",
+   "ders_b": "Nümerik Analiz 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "PERŞEMBE 09:25-10:10",
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Dinamik Sistemler 1",
+   "ders_b": "Olasılık ve İstatistik 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "PERŞEMBE 09:25-10:10",
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Dinamik Sistemler 1",
+   "ders_b": "Riemann Manifoldlar",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "PERŞEMBE 09:25-10:10",
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Eğriler Teorisi",
+   "ders_b": "Nümerik Analiz 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "PERŞEMBE 09:25-10:10",
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Eğriler Teorisi",
+   "ders_b": "Olasılık ve İstatistik 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "PERŞEMBE 09:25-10:10",
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Eğriler Teorisi",
+   "ders_b": "Riemann Manifoldlar",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "PERŞEMBE 09:25-10:10",
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Fark Denklemleri 1",
+   "ders_b": "Sonlu Farklar Yöntemi",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "ÇARŞAMBA 13:15-14:00",
+    "ÇARŞAMBA 14:10-14:55",
+    "ÇARŞAMBA 15:05-15:50"
+   ]
+  },
+  {
+   "ders_a": "Fonksiyonel Analiz 1",
+   "ders_b": "Kodlama Teorisine Giriş",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "PAZARTESİ 09:25-10:10",
+    "PAZARTESİ 10:20-11:05",
+    "PAZARTESİ 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Fonksiyonel Analiz 1",
+   "ders_b": "Spektral Graf Teori 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "PAZARTESİ 09:25-10:10",
+    "PAZARTESİ 10:20-11:05",
+    "PAZARTESİ 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Fuzzy Topoloji 1",
+   "ders_b": "Kısmi Türevli Dif. Denk. 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "SALI 13:15-14:00",
+    "SALI 14:10-14:55",
+    "SALI 15:05-15:50"
+   ]
+  },
+  {
+   "ders_a": "Fuzzy Topoloji 1",
+   "ders_b": "Matris Matematiği 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "SALI 13:15-14:00",
+    "SALI 14:10-14:55",
+    "SALI 15:05-15:50"
+   ]
+  },
+  {
+   "ders_a": "Kodlama Teorisine Giriş",
+   "ders_b": "Spektral Graf Teori 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "PAZARTESİ 09:25-10:10",
+    "PAZARTESİ 10:20-11:05",
+    "PAZARTESİ 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Kısmi Türevli Dif. Denk. 1",
+   "ders_b": "Matris Matematiği 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "SALI 13:15-14:00",
+    "SALI 14:10-14:55",
+    "SALI 15:05-15:50"
+   ]
+  },
+  {
+   "ders_a": "Lorentz Geometri 1",
+   "ders_b": "Ortogonal Polinomlar",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "CUMA 09:25-10:10",
+    "CUMA 10:20-11:05",
+    "CUMA 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Lorentz Geometri 1",
+   "ders_b": "Sayılar Teorisi 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "CUMA 09:25-10:10",
+    "CUMA 10:20-11:05",
+    "CUMA 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Mesleki İngilizce 1",
+   "ders_b": "Uygulamalı Matematik",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "PERŞEMBE 13:15-14:00",
+    "PERŞEMBE 14:10-14:55",
+    "PERŞEMBE 15:05-15:50"
+   ]
+  },
+  {
+   "ders_a": "Mesleki İngilizce 1",
+   "ders_b": "Yaklaşım Kümeler Teorisi 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "PERŞEMBE 13:15-14:00",
+    "PERŞEMBE 14:10-14:55",
+    "PERŞEMBE 15:05-15:50"
+   ]
+  },
+  {
+   "ders_a": "Nümerik Analiz 1",
+   "ders_b": "Olasılık ve İstatistik 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "PERŞEMBE 09:25-10:10",
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Nümerik Analiz 1",
+   "ders_b": "Riemann Manifoldlar",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "PERŞEMBE 09:25-10:10",
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Olasılık ve İstatistik 1",
+   "ders_b": "Riemann Manifoldlar",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "PERŞEMBE 09:25-10:10",
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Ortogonal Polinomlar",
+   "ders_b": "Sayılar Teorisi 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "CUMA 09:25-10:10",
+    "CUMA 10:20-11:05",
+    "CUMA 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Uygulamalı Matematik",
+   "ders_b": "Yaklaşım Kümeler Teorisi 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 3,
+   "saatler": [
+    "PERŞEMBE 13:15-14:00",
+    "PERŞEMBE 14:10-14:55",
+    "PERŞEMBE 15:05-15:50"
+   ]
+  },
+  {
+   "ders_a": "Analitik Geometri 1",
+   "ders_b": "Fizik 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PERŞEMBE 13:15-14:00",
+    "PERŞEMBE 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Analitik Geometri 1",
+   "ders_b": "Mesleki İngilizce 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PERŞEMBE 13:15-14:00",
+    "PERŞEMBE 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Analitik Geometri 1",
+   "ders_b": "Uygulamalı Matematik",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PERŞEMBE 13:15-14:00",
+    "PERŞEMBE 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Analitik Geometri 1",
+   "ders_b": "Yaklaşım Kümeler Teorisi 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PERŞEMBE 13:15-14:00",
+    "PERŞEMBE 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Analiz 1",
+   "ders_b": "Kompleks Analiz 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PAZARTESİ 15:05-15:50",
+    "PAZARTESİ 16:00-16:45"
+   ]
+  },
+  {
+   "ders_a": "Analiz 1",
+   "ders_b": "İngilizce 3",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PAZARTESİ 15:05-15:50",
+    "PAZARTESİ 16:00-16:45"
+   ]
+  },
+  {
+   "ders_a": "Analiz 3",
+   "ders_b": "Bağlantılı Uzaylar",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "ÇARŞAMBA 10:20-11:05",
+    "ÇARŞAMBA 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Analiz 3",
+   "ders_b": "Cebir 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "ÇARŞAMBA 10:20-11:05",
+    "ÇARŞAMBA 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Analiz 3",
+   "ders_b": "Diferensiyel Geometri 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PAZARTESİ 13:15-14:00",
+    "PAZARTESİ 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Analiz 3",
+   "ders_b": "Lineer Cebir 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PAZARTESİ 13:15-14:00",
+    "PAZARTESİ 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Analiz 3",
+   "ders_b": "Topolojik Gruplar",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "ÇARŞAMBA 10:20-11:05",
+    "ÇARŞAMBA 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Bağlantılı Uzaylar",
+   "ders_b": "Cebir 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "ÇARŞAMBA 10:20-11:05",
+    "ÇARŞAMBA 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Cebir 1",
+   "ders_b": "Diferensiyel Denklemler 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "SALI 10:20-11:05",
+    "SALI 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Cebir 1",
+   "ders_b": "Müzik ve Matematik",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "SALI 10:20-11:05",
+    "SALI 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Cebir 1",
+   "ders_b": "Topolojik Gruplar",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "ÇARŞAMBA 10:20-11:05",
+    "ÇARŞAMBA 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Diferensiyel Denklemler 1",
+   "ders_b": "Fonksiyonel Analiz 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PAZARTESİ 10:20-11:05",
+    "PAZARTESİ 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Diferensiyel Denklemler 1",
+   "ders_b": "Kodlama Teorisine Giriş",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PAZARTESİ 10:20-11:05",
+    "PAZARTESİ 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Diferensiyel Denklemler 1",
+   "ders_b": "Müzik ve Matematik",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "SALI 10:20-11:05",
+    "SALI 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Diferensiyel Denklemler 1",
+   "ders_b": "Spektral Graf Teori 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PAZARTESİ 10:20-11:05",
+    "PAZARTESİ 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Diferensiyel Geometri 1",
+   "ders_b": "Fark Denklemleri 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "ÇARŞAMBA 13:15-14:00",
+    "ÇARŞAMBA 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Diferensiyel Geometri 1",
+   "ders_b": "Lineer Cebir 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PAZARTESİ 13:15-14:00",
+    "PAZARTESİ 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Diferensiyel Geometri 1",
+   "ders_b": "Sonlu Farklar Yöntemi",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "ÇARŞAMBA 13:15-14:00",
+    "ÇARŞAMBA 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Diferensiyel Geometri 1",
+   "ders_b": "Soyut Matematik 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "ÇARŞAMBA 13:15-14:00",
+    "ÇARŞAMBA 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Diferensiyel Geometri 1",
+   "ders_b": "Topoloji 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "ÇARŞAMBA 13:15-14:00",
+    "ÇARŞAMBA 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Dinamik Sistemler 1",
+   "ders_b": "Lineer Cebir 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Eğriler Teorisi",
+   "ders_b": "Lineer Cebir 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Fark Denklemleri 1",
+   "ders_b": "Soyut Matematik 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "ÇARŞAMBA 13:15-14:00",
+    "ÇARŞAMBA 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Fark Denklemleri 1",
+   "ders_b": "Topoloji 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "ÇARŞAMBA 13:15-14:00",
+    "ÇARŞAMBA 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Fizik 1",
+   "ders_b": "Kompleks Analiz 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "ÇARŞAMBA 08:30-09:15",
+    "ÇARŞAMBA 09:25-10:10"
+   ]
+  },
+  {
+   "ders_a": "Fizik 1",
+   "ders_b": "Mesleki İngilizce 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PERŞEMBE 13:15-14:00",
+    "PERŞEMBE 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Fizik 1",
+   "ders_b": "Uygulamalı Matematik",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PERŞEMBE 13:15-14:00",
+    "PERŞEMBE 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Fizik 1",
+   "ders_b": "Yaklaşım Kümeler Teorisi 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PERŞEMBE 13:15-14:00",
+    "PERŞEMBE 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Fuzzy Topoloji 1",
+   "ders_b": "TOS",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "SALI 13:15-14:00",
+    "SALI 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Fuzzy Topoloji 1",
+   "ders_b": "Topoloji 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "SALI 13:15-14:00",
+    "SALI 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Kompleks Analiz 1",
+   "ders_b": "İngilizce 3",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PAZARTESİ 15:05-15:50",
+    "PAZARTESİ 16:00-16:45"
+   ]
+  },
+  {
+   "ders_a": "Kısmi Türevli Dif. Denk. 1",
+   "ders_b": "TOS",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "SALI 13:15-14:00",
+    "SALI 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Kısmi Türevli Dif. Denk. 1",
+   "ders_b": "Topoloji 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "SALI 13:15-14:00",
+    "SALI 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Lineer Cebir 1",
+   "ders_b": "Nümerik Analiz 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Lineer Cebir 1",
+   "ders_b": "Olasılık ve İstatistik 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Lineer Cebir 1",
+   "ders_b": "Riemann Manifoldlar",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "PERŞEMBE 10:20-11:05",
+    "PERŞEMBE 11:15-12:00"
+   ]
+  },
+  {
+   "ders_a": "Matris Matematiği 1",
+   "ders_b": "TOS",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "SALI 13:15-14:00",
+    "SALI 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Matris Matematiği 1",
+   "ders_b": "Topoloji 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "SALI 13:15-14:00",
+    "SALI 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Sonlu Farklar Yöntemi",
+   "ders_b": "Soyut Matematik 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "ÇARŞAMBA 13:15-14:00",
+    "ÇARŞAMBA 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Sonlu Farklar Yöntemi",
+   "ders_b": "Topoloji 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "ÇARŞAMBA 13:15-14:00",
+    "ÇARŞAMBA 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Soyut Matematik 1",
+   "ders_b": "Topoloji 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "ÇARŞAMBA 13:15-14:00",
+    "ÇARŞAMBA 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "TOS",
+   "ders_b": "Topoloji 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 2,
+   "saatler": [
+    "SALI 13:15-14:00",
+    "SALI 14:10-14:55"
+   ]
+  },
+  {
+   "ders_a": "Analitik Geometri 1",
+   "ders_b": "Fonksiyonel Analiz 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 1,
+   "saatler": [
+    "PAZARTESİ 09:25-10:10"
+   ]
+  },
+  {
+   "ders_a": "Analitik Geometri 1",
+   "ders_b": "Kodlama Teorisine Giriş",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 1,
+   "saatler": [
+    "PAZARTESİ 09:25-10:10"
+   ]
+  },
+  {
+   "ders_a": "Analitik Geometri 1",
+   "ders_b": "Spektral Graf Teori 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 1,
+   "saatler": [
+    "PAZARTESİ 09:25-10:10"
+   ]
+  },
+  {
+   "ders_a": "Analiz 1",
+   "ders_b": "Bilgisayar Programlama 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 1,
+   "saatler": [
+    "ÇARŞAMBA 16:00-16:45"
+   ]
+  },
+  {
+   "ders_a": "Analiz 1",
+   "ders_b": "Dinamik Sistemler 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 1,
+   "saatler": [
+    "PERŞEMBE 09:25-10:10"
+   ]
+  },
+  {
+   "ders_a": "Analiz 1",
+   "ders_b": "Eğriler Teorisi",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 1,
+   "saatler": [
+    "PERŞEMBE 09:25-10:10"
+   ]
+  },
+  {
+   "ders_a": "Analiz 1",
+   "ders_b": "Fark Denklemleri 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 1,
+   "saatler": [
+    "ÇARŞAMBA 15:05-15:50"
+   ]
+  },
+  {
+   "ders_a": "Analiz 1",
+   "ders_b": "Nümerik Analiz 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 1,
+   "saatler": [
+    "PERŞEMBE 09:25-10:10"
+   ]
+  },
+  {
+   "ders_a": "Analiz 1",
+   "ders_b": "Olasılık ve İstatistik 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 1,
+   "saatler": [
+    "PERŞEMBE 09:25-10:10"
+   ]
+  },
+  {
+   "ders_a": "Analiz 1",
+   "ders_b": "Riemann Manifoldlar",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 1,
+   "saatler": [
+    "PERŞEMBE 09:25-10:10"
+   ]
+  },
+  {
+   "ders_a": "Analiz 1",
+   "ders_b": "Sonlu Farklar Yöntemi",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 1,
+   "saatler": [
+    "ÇARŞAMBA 15:05-15:50"
+   ]
+  },
+  {
+   "ders_a": "Bağlantılı Uzaylar",
+   "ders_b": "Fizik 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 1,
+   "saatler": [
+    "ÇARŞAMBA 09:25-10:10"
+   ]
+  },
+  {
+   "ders_a": "Bağlantılı Uzaylar",
+   "ders_b": "Kompleks Analiz 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 1,
+   "saatler": [
+    "ÇARŞAMBA 09:25-10:10"
+   ]
+  },
+  {
+   "ders_a": "Bilgisayar Programlama 1",
+   "ders_b": "Müzik ve Matematik",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 1,
+   "saatler": [
+    "SALI 09:25-10:10"
+   ]
+  },
+  {
+   "ders_a": "Fizik 1",
+   "ders_b": "Topolojik Gruplar",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 1,
+   "saatler": [
+    "ÇARŞAMBA 09:25-10:10"
+   ]
+  },
+  {
+   "ders_a": "Kompleks Analiz 1",
+   "ders_b": "Topolojik Gruplar",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 1,
+   "saatler": [
+    "ÇARŞAMBA 09:25-10:10"
+   ]
+  },
+  {
+   "ders_a": "Mesleki İngilizce 1",
+   "ders_b": "Soyut Matematik 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 1,
+   "saatler": [
+    "PERŞEMBE 15:05-15:50"
+   ]
+  },
+  {
+   "ders_a": "Soyut Matematik 1",
+   "ders_b": "Uygulamalı Matematik",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 1,
+   "saatler": [
+    "PERŞEMBE 15:05-15:50"
+   ]
+  },
+  {
+   "ders_a": "Soyut Matematik 1",
+   "ders_b": "Yaklaşım Kümeler Teorisi 1",
+   "grup_a": null,
+   "grup_b": null,
+   "saat_sayisi": 1,
+   "saatler": [
+    "PERŞEMBE 15:05-15:50"
+   ]
+  }
+ ]
+}
