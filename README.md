@@ -399,3 +399,12 @@ Sorun bildirimi ve öneri için issue açabilirsiniz. Kod değişikliği
 gönderiyorsanız ilgili testi de ekleyin — bu depoda testsiz kural
 değişikliği kabul edilmiyor, çünkü yanlış bir AKTS hesabı kimsenin fark
 etmeyeceği bir hatadır.
+
+## Lisans
+
+[MIT](LICENSE). Serbestçe kullanabilir, değiştirebilir ve
+dağıtabilirsiniz.
+
+Araç bir **karar destek** aracıdır: ürettiği her uyarı bir tespittir,
+onay/ret kararı ve sorumluluğu danışmana aittir. Yazılım "olduğu gibi"
+sunulur; kullanımından doğan sonuçlardan yazar sorumlu değildir.
