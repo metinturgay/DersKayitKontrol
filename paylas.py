@@ -258,8 +258,12 @@ def _sizinti_denetimi(klasor):
     import re
 
     desenler = [
+        # Sınır (\b) KULLANILMIYOR: "_" bir sözcük karakteri
+        # olduğu için `ders_sayfasi_<numara>.html` içindeki numara
+        # sınırlı desene HİÇ takılmıyordu. Aynı tuzak test
+        # korumasında da vardı ve orada koruma baştan beri ölüydü.
         ("gerçek biçimli öğrenci no",
-         re.compile(r"\b\d{2}2709\d{3}\b")),
+         re.compile(r"(?<!\d)\d{2}2709\d{3}(?!\d)")),
         # Yalniz TIRNAK ICINDE yazili deger araniyor: `sifre = x`
         # bir degisken atamasidir, sir degil. Once genel bir desen
         # kullanildi ve ders_kayit.py'yi sir sandi.

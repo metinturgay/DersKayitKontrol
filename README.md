@@ -202,9 +202,9 @@ Araç **sicil/şifre sormadan ÖNCE** hangi bölüm ve hangi belgelerle
 ```
   BÖLÜM     : Selçuk Üniversitesi Fen Fakültesi Matematik Bölümü
   Okutulacak Dersler belgeleri:
-      2026 girişliler    ...eri-yerel\mufredat6.docx
+      2026 girişliler    ...\veri-yerel\mufredat\2026.docx
   Ders programı:
-      ...eri-yerel\ders_programi.xlsx
+      ...\veri-yerel\ders_programi.xlsx
 
   Bu belgelerle devam edilsin mi? [e / h / i]
 ```
