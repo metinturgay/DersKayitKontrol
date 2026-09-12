@@ -35,7 +35,7 @@ KOD = [
     "mufredat.py", "ders_programi.py", "akts_degisimi.py",
     "panoyu_yenile.py", "mufredat_denetle.py", "program_denetle.py",
     "yollar.py", "baslat.py", "exe_yap.py",
-    "paylas.py", "KULLANIM.md", "README.md",
+    "paylas.py", "KULLANIM.md", "README.md", "LICENSE",
 ]
 VERI = [
     "veri/bolum.json",           # bölüm profili - yönetmelik dışı her şey
