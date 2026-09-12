@@ -1,0 +1,1353 @@
+{
+ "kaynak": "mufredat.docx",
+ "dersler": {
+  "2709151": {
+   "ders_no": "2709151",
+   "ders_adi": "Analiz I",
+   "tip": "Zorunlu",
+   "akts": 8,
+   "yariyil": 1,
+   "teorik": 6,
+   "uygulama": 0,
+   "kredi": 6
+  },
+  "2709152": {
+   "ders_no": "2709152",
+   "ders_adi": "Fizik I",
+   "tip": "Zorunlu",
+   "akts": 4,
+   "yariyil": 1,
+   "teorik": 4,
+   "uygulama": 0,
+   "kredi": 4
+  },
+  "2709153": {
+   "ders_no": "2709153",
+   "ders_adi": "Soyut Matematik I",
+   "tip": "Zorunlu",
+   "akts": 4,
+   "yariyil": 1,
+   "teorik": 2,
+   "uygulama": 2,
+   "kredi": 3
+  },
+  "2709171": {
+   "ders_no": "2709171",
+   "ders_adi": "Lineer Cebir I",
+   "tip": "Zorunlu",
+   "akts": 6,
+   "yariyil": 1,
+   "teorik": 4,
+   "uygulama": 0,
+   "kredi": 4
+  },
+  "2709172": {
+   "ders_no": "2709172",
+   "ders_adi": "İngilizce I",
+   "tip": "Zorunlu",
+   "akts": 2,
+   "yariyil": 1,
+   "teorik": 2,
+   "uygulama": 0,
+   "kredi": 2
+  },
+  "2709161": {
+   "ders_no": "2709161",
+   "ders_adi": "Türk Dili I",
+   "tip": "Zorunlu",
+   "akts": 2,
+   "yariyil": 1,
+   "teorik": 2,
+   "uygulama": 0,
+   "kredi": 2
+  },
+  "2709162": {
+   "ders_no": "2709162",
+   "ders_adi": "Atatürk İlk. ve İnk. Tarihi I",
+   "tip": "Zorunlu",
+   "akts": 2,
+   "yariyil": 1,
+   "teorik": 2,
+   "uygulama": 0,
+   "kredi": 2
+  },
+  "2709163": {
+   "ders_no": "2709163",
+   "ders_adi": "Fizik Laboratuvarı I",
+   "tip": "Zorunlu",
+   "akts": 2,
+   "yariyil": 1,
+   "teorik": 0,
+   "uygulama": 2,
+   "kredi": 1
+  },
+  "2709251": {
+   "ders_no": "2709251",
+   "ders_adi": "Analiz II",
+   "tip": "Zorunlu",
+   "akts": 8,
+   "yariyil": 2,
+   "teorik": 6,
+   "uygulama": 0,
+   "kredi": 6
+  },
+  "2709252": {
+   "ders_no": "2709252",
+   "ders_adi": "Fizik II",
+   "tip": "Zorunlu",
+   "akts": 4,
+   "yariyil": 2,
+   "teorik": 4,
+   "uygulama": 0,
+   "kredi": 4
+  },
+  "2709253": {
+   "ders_no": "2709253",
+   "ders_adi": "Soyut Matematik II",
+   "tip": "Zorunlu",
+   "akts": 4,
+   "yariyil": 2,
+   "teorik": 2,
+   "uygulama": 2,
+   "kredi": 3
+  },
+  "2709265": {
+   "ders_no": "2709265",
+   "ders_adi": "Lineer Cebir II",
+   "tip": "Zorunlu",
+   "akts": 6,
+   "yariyil": 2,
+   "teorik": 4,
+   "uygulama": 0,
+   "kredi": 4
+  },
+  "2709266": {
+   "ders_no": "2709266",
+   "ders_adi": "İngilizce II",
+   "tip": "Zorunlu",
+   "akts": 2,
+   "yariyil": 2,
+   "teorik": 2,
+   "uygulama": 0,
+   "kredi": 2
+  },
+  "2709261": {
+   "ders_no": "2709261",
+   "ders_adi": "Türk Dili II",
+   "tip": "Zorunlu",
+   "akts": 2,
+   "yariyil": 2,
+   "teorik": 2,
+   "uygulama": 0,
+   "kredi": 2
+  },
+  "2709262": {
+   "ders_no": "2709262",
+   "ders_adi": "Atatürk İlk. ve İnk. Tarihi II",
+   "tip": "Zorunlu",
+   "akts": 2,
+   "yariyil": 2,
+   "teorik": 2,
+   "uygulama": 0,
+   "kredi": 2
+  },
+  "2709263": {
+   "ders_no": "2709263",
+   "ders_adi": "Fizik Laboratuvarı II",
+   "tip": "Zorunlu",
+   "akts": 2,
+   "yariyil": 2,
+   "teorik": 0,
+   "uygulama": 2,
+   "kredi": 1
+  },
+  "2709301": {
+   "ders_no": "2709301",
+   "ders_adi": "Analiz III",
+   "tip": "Zorunlu",
+   "akts": 5,
+   "yariyil": 3,
+   "teorik": 4,
+   "uygulama": 0,
+   "kredi": 4
+  },
+  "2709303": {
+   "ders_no": "2709303",
+   "ders_adi": "Diferensiyel Denklemler I",
+   "tip": "Zorunlu",
+   "akts": 6,
+   "yariyil": 3,
+   "teorik": 4,
+   "uygulama": 0,
+   "kredi": 4
+  },
+  "2709304": {
+   "ders_no": "2709304",
+   "ders_adi": "Topoloji I",
+   "tip": "Zorunlu",
+   "akts": 6,
+   "yariyil": 3,
+   "teorik": 4,
+   "uygulama": 0,
+   "kredi": 4
+  },
+  "2709305": {
+   "ders_no": "2709305",
+   "ders_adi": "Olasılık ve İstatistik I",
+   "tip": "Zorunlu",
+   "akts": 3,
+   "yariyil": 3,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709306": {
+   "ders_no": "2709306",
+   "ders_adi": "Bilgisayar Programlama I",
+   "tip": "Zorunlu",
+   "akts": 3,
+   "yariyil": 3,
+   "teorik": 2,
+   "uygulama": 2,
+   "kredi": 3
+  },
+  "2709308": {
+   "ders_no": "2709308",
+   "ders_adi": "Analitik Geometri I",
+   "tip": "Zorunlu",
+   "akts": 5,
+   "yariyil": 3,
+   "teorik": 4,
+   "uygulama": 0,
+   "kredi": 4
+  },
+  "2709309": {
+   "ders_no": "2709309",
+   "ders_adi": "İngilizce III",
+   "tip": "Zorunlu",
+   "akts": 2,
+   "yariyil": 3,
+   "teorik": 1,
+   "uygulama": 1,
+   "kredi": 1.5
+  },
+  "2709401": {
+   "ders_no": "2709401",
+   "ders_adi": "Analiz IV",
+   "tip": "Zorunlu",
+   "akts": 5,
+   "yariyil": 4,
+   "teorik": 4,
+   "uygulama": 0,
+   "kredi": 4
+  },
+  "2709403": {
+   "ders_no": "2709403",
+   "ders_adi": "Diferensiyel Denklemler II",
+   "tip": "Zorunlu",
+   "akts": 6,
+   "yariyil": 4,
+   "teorik": 4,
+   "uygulama": 0,
+   "kredi": 4
+  },
+  "2709404": {
+   "ders_no": "2709404",
+   "ders_adi": "Topoloji II",
+   "tip": "Zorunlu",
+   "akts": 6,
+   "yariyil": 4,
+   "teorik": 4,
+   "uygulama": 0,
+   "kredi": 4
+  },
+  "2709405": {
+   "ders_no": "2709405",
+   "ders_adi": "Olasılık ve İstatistik II",
+   "tip": "Zorunlu",
+   "akts": 3,
+   "yariyil": 4,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709406": {
+   "ders_no": "2709406",
+   "ders_adi": "Bilgisayar Programlama II",
+   "tip": "Zorunlu",
+   "akts": 3,
+   "yariyil": 4,
+   "teorik": 2,
+   "uygulama": 2,
+   "kredi": 3
+  },
+  "2709408": {
+   "ders_no": "2709408",
+   "ders_adi": "Analitik Geometri II",
+   "tip": "Zorunlu",
+   "akts": 5,
+   "yariyil": 4,
+   "teorik": 4,
+   "uygulama": 0,
+   "kredi": 4
+  },
+  "2709409": {
+   "ders_no": "2709409",
+   "ders_adi": "İngilizce IV",
+   "tip": "Zorunlu",
+   "akts": 2,
+   "yariyil": 4,
+   "teorik": 1,
+   "uygulama": 1,
+   "kredi": 1.5
+  },
+  "2709544": {
+   "ders_no": "2709544",
+   "ders_adi": "Diferensiyel Geometri I",
+   "tip": "Zorunlu",
+   "akts": 5,
+   "yariyil": 5,
+   "teorik": 4,
+   "uygulama": 0,
+   "kredi": 4
+  },
+  "2709546": {
+   "ders_no": "2709546",
+   "ders_adi": "Sayılar Teorisi I",
+   "tip": "Zorunlu",
+   "akts": 3,
+   "yariyil": 5,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709505": {
+   "ders_no": "2709505",
+   "ders_adi": "Kompleks Analiz I",
+   "tip": "Zorunlu",
+   "akts": 6,
+   "yariyil": 5,
+   "teorik": 4,
+   "uygulama": 0,
+   "kredi": 4
+  },
+  "2709507": {
+   "ders_no": "2709507",
+   "ders_adi": "Fonksiyonel Analiz I",
+   "tip": "Zorunlu",
+   "akts": 4,
+   "yariyil": 5,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709545": {
+   "ders_no": "2709545",
+   "ders_adi": "Cebir I",
+   "tip": "Zorunlu",
+   "akts": 5,
+   "yariyil": 5,
+   "teorik": 4,
+   "uygulama": 0,
+   "kredi": 4
+  },
+  "2709547": {
+   "ders_no": "2709547",
+   "ders_adi": "Uygulamalı Matematik I",
+   "tip": "Zorunlu",
+   "akts": 3,
+   "yariyil": 5,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709503": {
+   "ders_no": "2709503",
+   "ders_adi": "Kısmi Türevli Dif. Denk. I",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 5,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709509": {
+   "ders_no": "2709509",
+   "ders_adi": "Matris Teorisi I",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 5,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709504": {
+   "ders_no": "2709504",
+   "ders_adi": "Nümerik Analiz I",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 5,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709511": {
+   "ders_no": "2709511",
+   "ders_adi": "Gerçel Analiz I",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 5,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709513": {
+   "ders_no": "2709513",
+   "ders_adi": "Sayılar ve Geometri I",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 5,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709521": {
+   "ders_no": "2709521",
+   "ders_adi": "Matematik Tarihi",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 5,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709522": {
+   "ders_no": "2709522",
+   "ders_adi": "Fourier Analiz",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 5,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709534": {
+   "ders_no": "2709534",
+   "ders_adi": "Dönüşümler ve Geometriler I",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 5,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709536": {
+   "ders_no": "2709536",
+   "ders_adi": "Eğriler Teorisi",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 5,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709537": {
+   "ders_no": "2709537",
+   "ders_adi": "Fuzzy Topoloji",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 5,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709543": {
+   "ders_no": "2709543",
+   "ders_adi": "Matris Matematiği I",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 5,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709644": {
+   "ders_no": "2709644",
+   "ders_adi": "Diferensiyel Geometri II",
+   "tip": "Zorunlu",
+   "akts": 5,
+   "yariyil": 6,
+   "teorik": 4,
+   "uygulama": 0,
+   "kredi": 4
+  },
+  "2709646": {
+   "ders_no": "2709646",
+   "ders_adi": "Sayılar Teorisi II",
+   "tip": "Zorunlu",
+   "akts": 3,
+   "yariyil": 6,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709605": {
+   "ders_no": "2709605",
+   "ders_adi": "Kompleks Analiz II",
+   "tip": "Zorunlu",
+   "akts": 6,
+   "yariyil": 6,
+   "teorik": 4,
+   "uygulama": 0,
+   "kredi": 4
+  },
+  "2709607": {
+   "ders_no": "2709607",
+   "ders_adi": "Fonksiyonel Analiz II",
+   "tip": "Zorunlu",
+   "akts": 4,
+   "yariyil": 6,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709645": {
+   "ders_no": "2709645",
+   "ders_adi": "Cebir II",
+   "tip": "Zorunlu",
+   "akts": 5,
+   "yariyil": 6,
+   "teorik": 4,
+   "uygulama": 0,
+   "kredi": 4
+  },
+  "2709647": {
+   "ders_no": "2709647",
+   "ders_adi": "Uygulamalı Matematik II",
+   "tip": "Zorunlu",
+   "akts": 3,
+   "yariyil": 6,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709603": {
+   "ders_no": "2709603",
+   "ders_adi": "Kısmi Türevli Dif. Denk.II",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 6,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709609": {
+   "ders_no": "2709609",
+   "ders_adi": "Matris Teorisi II",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 6,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709604": {
+   "ders_no": "2709604",
+   "ders_adi": "Nümerik Analiz II",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 6,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709611": {
+   "ders_no": "2709611",
+   "ders_adi": "Gerçel Analiz II",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 6,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709613": {
+   "ders_no": "2709613",
+   "ders_adi": "Sayılar ve Geometri II",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 6,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709621": {
+   "ders_no": "2709621",
+   "ders_adi": "Kombinatorik",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 6,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709622": {
+   "ders_no": "2709622",
+   "ders_adi": "Ortogonal Fonksiyonlar",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 6,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709635": {
+   "ders_no": "2709635",
+   "ders_adi": "Dönüşümler ve Geometriler II",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 6,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709638": {
+   "ders_no": "2709638",
+   "ders_adi": "Yüzeyler Teorisi",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 6,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709637": {
+   "ders_no": "2709637",
+   "ders_adi": "Fuzzy Topoloji",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 6,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709643": {
+   "ders_no": "2709643",
+   "ders_adi": "Matris Matematiği II",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 6,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709753": {
+   "ders_no": "2709753",
+   "ders_adi": "Matematik Uygulamaları I",
+   "tip": "Zorunlu",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 2,
+   "uygulama": 2,
+   "kredi": 3
+  },
+  "2709749": {
+   "ders_no": "2709749",
+   "ders_adi": "Türk Dünyası Âşıklık Geleneği",
+   "tip": "TOS",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 2,
+   "uygulama": 0,
+   "kredi": 2
+  },
+  "2709747": {
+   "ders_no": "2709747",
+   "ders_adi": "Matematik ve Oyun",
+   "tip": "TOS",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 2,
+   "uygulama": 0,
+   "kredi": 2
+  },
+  "2709746": {
+   "ders_no": "2709746",
+   "ders_adi": "Öğrenme Psikolojisİ",
+   "tip": "TOS",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 2,
+   "uygulama": 0,
+   "kredi": 2
+  },
+  "2709704": {
+   "ders_no": "2709704",
+   "ders_adi": "Örnekleme Teorisi I",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709707": {
+   "ders_no": "2709707",
+   "ders_adi": "Bağlantılı Uzaylar",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709711": {
+   "ders_no": "2709711",
+   "ders_adi": "İleri Nümerik Analiz I",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709714": {
+   "ders_no": "2709714",
+   "ders_adi": "Matematik Modellemeye Giriş I",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709717": {
+   "ders_no": "2709717",
+   "ders_adi": "Fark Denklemleri I",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709718": {
+   "ders_no": "2709718",
+   "ders_adi": "Cebir III",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709719": {
+   "ders_no": "2709719",
+   "ders_adi": "Spektral Graf Teori I",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709720": {
+   "ders_no": "2709720",
+   "ders_adi": "Yaklaşım Kümeler Teorisi I",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709722": {
+   "ders_no": "2709722",
+   "ders_adi": "Mesleki İngilizce I",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709725": {
+   "ders_no": "2709725",
+   "ders_adi": "İntegral Dönüşümleri I",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709730": {
+   "ders_no": "2709730",
+   "ders_adi": "Varyasyonel Hesaplama",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709731": {
+   "ders_no": "2709731",
+   "ders_adi": "Dinamik Sistemler I",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709732": {
+   "ders_no": "2709732",
+   "ders_adi": "Yaklaşım Teorisi I",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709733": {
+   "ders_no": "2709733",
+   "ders_adi": "Sonlu Farklar Yöntemi",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709734": {
+   "ders_no": "2709734",
+   "ders_adi": "Müzik ve Matematik I",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709735": {
+   "ders_no": "2709735",
+   "ders_adi": "Lorentz Geometri I",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709736": {
+   "ders_no": "2709736",
+   "ders_adi": "Hareket Geometrisi",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709738": {
+   "ders_no": "2709738",
+   "ders_adi": "Manifoldlarda Hesaplama",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709739": {
+   "ders_no": "2709739",
+   "ders_adi": "Topolojik Gruplar",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709744": {
+   "ders_no": "2709744",
+   "ders_adi": "Kodlama Teorisine Giriş",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709745": {
+   "ders_no": "2709745",
+   "ders_adi": "Ortogonal Polinomlar",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709741": {
+   "ders_no": "2709741",
+   "ders_adi": "Özel Öğretim Yöntemleri",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709756": {
+   "ders_no": "2709756",
+   "ders_adi": "Optimizasyona Giriş",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709755": {
+   "ders_no": "2709755",
+   "ders_adi": "Riemann Manifoldlar",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 7,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709853": {
+   "ders_no": "2709853",
+   "ders_adi": "Matematik Uygulamaları II",
+   "tip": "Zorunlu",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 2,
+   "uygulama": 2,
+   "kredi": 3
+  },
+  "2709748": {
+   "ders_no": "2709748",
+   "ders_adi": "Bilim, Sanat ve Teknolojide Matematik",
+   "tip": "TOS",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 2,
+   "uygulama": 0,
+   "kredi": 2
+  },
+  "2709849": {
+   "ders_no": "2709849",
+   "ders_adi": "Anadolu Âşıklık Geleneği",
+   "tip": "TOS",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 2,
+   "uygulama": 0,
+   "kredi": 2
+  },
+  "2709846": {
+   "ders_no": "2709846",
+   "ders_adi": "Öğretme Kuram ve Yaklaşımları",
+   "tip": "TOS",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 2,
+   "uygulama": 0,
+   "kredi": 2
+  },
+  "2709804": {
+   "ders_no": "2709804",
+   "ders_adi": "Örnekleme Teorisi II",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709807": {
+   "ders_no": "2709807",
+   "ders_adi": "Metrik Uzaylar",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709811": {
+   "ders_no": "2709811",
+   "ders_adi": "İleri Nümerik Analiz II",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709814": {
+   "ders_no": "2709814",
+   "ders_adi": "Matematik Modellemeye Giriş II",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709817": {
+   "ders_no": "2709817",
+   "ders_adi": "Fark Denklemleri II",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709818": {
+   "ders_no": "2709818",
+   "ders_adi": "Cebir IV",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709819": {
+   "ders_no": "2709819",
+   "ders_adi": "Spektral Graf Teori II",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709820": {
+   "ders_no": "2709820",
+   "ders_adi": "Yaklaşım Kümeler Teorisi II",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709822": {
+   "ders_no": "2709822",
+   "ders_adi": "Mesleki İngilizce II",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709825": {
+   "ders_no": "2709825",
+   "ders_adi": "İntegral Dönüşümleri II",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709831": {
+   "ders_no": "2709831",
+   "ders_adi": "Dinamik Sistemler II",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709832": {
+   "ders_no": "2709832",
+   "ders_adi": "Yaklaşım Teorisi II",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709833": {
+   "ders_no": "2709833",
+   "ders_adi": "Bilimsel Hesaplamalar",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709834": {
+   "ders_no": "2709834",
+   "ders_adi": "Müzik ve Matematik II",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709835": {
+   "ders_no": "2709835",
+   "ders_adi": "Lorentz Geometri II",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709837": {
+   "ders_no": "2709837",
+   "ders_adi": "Öklid Dışı Geometriler",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709838": {
+   "ders_no": "2709838",
+   "ders_adi": "Diferensiyellenebilir Manifoldlar",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709844": {
+   "ders_no": "2709844",
+   "ders_adi": "Kodlama Teorisi",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  },
+  "2709856": {
+   "ders_no": "2709856",
+   "ders_adi": "Optimizasyon ve Uygulamaları",
+   "tip": "Seçmeli",
+   "akts": 4,
+   "yariyil": 8,
+   "teorik": 3,
+   "uygulama": 0,
+   "kredi": 3
+  }
+ },
+ "yariyillar": {
+  "1": {
+   "toplam_akts": 30,
+   "zorunlu": [
+    "2709151",
+    "2709152",
+    "2709153",
+    "2709171",
+    "2709172",
+    "2709161",
+    "2709162",
+    "2709163"
+   ],
+   "secmeli": [],
+   "tos": []
+  },
+  "2": {
+   "toplam_akts": 30,
+   "zorunlu": [
+    "2709251",
+    "2709252",
+    "2709253",
+    "2709265",
+    "2709266",
+    "2709261",
+    "2709262",
+    "2709263"
+   ],
+   "secmeli": [],
+   "tos": []
+  },
+  "3": {
+   "toplam_akts": 30,
+   "zorunlu": [
+    "2709301",
+    "2709303",
+    "2709304",
+    "2709305",
+    "2709306",
+    "2709308",
+    "2709309"
+   ],
+   "secmeli": [],
+   "tos": []
+  },
+  "4": {
+   "toplam_akts": 30,
+   "zorunlu": [
+    "2709401",
+    "2709403",
+    "2709404",
+    "2709405",
+    "2709406",
+    "2709408",
+    "2709409"
+   ],
+   "secmeli": [],
+   "tos": []
+  },
+  "5": {
+   "toplam_akts": 30,
+   "zorunlu": [
+    "2709544",
+    "2709546",
+    "2709505",
+    "2709507",
+    "2709545",
+    "2709547"
+   ],
+   "secmeli": [
+    "2709503",
+    "2709509",
+    "2709504",
+    "2709511",
+    "2709513",
+    "2709521",
+    "2709522",
+    "2709534",
+    "2709536",
+    "2709537",
+    "2709543"
+   ],
+   "tos": []
+  },
+  "6": {
+   "toplam_akts": 30,
+   "zorunlu": [
+    "2709644",
+    "2709646",
+    "2709605",
+    "2709607",
+    "2709645",
+    "2709647"
+   ],
+   "secmeli": [
+    "2709603",
+    "2709609",
+    "2709604",
+    "2709611",
+    "2709613",
+    "2709621",
+    "2709622",
+    "2709635",
+    "2709638",
+    "2709637",
+    "2709643"
+   ],
+   "tos": []
+  },
+  "7": {
+   "toplam_akts": 32,
+   "zorunlu": [
+    "2709753"
+   ],
+   "secmeli": [
+    "2709704",
+    "2709707",
+    "2709711",
+    "2709714",
+    "2709717",
+    "2709718",
+    "2709719",
+    "2709720",
+    "2709722",
+    "2709725",
+    "2709730",
+    "2709731",
+    "2709732",
+    "2709733",
+    "2709734",
+    "2709735",
+    "2709736",
+    "2709738",
+    "2709739",
+    "2709744",
+    "2709745",
+    "2709741",
+    "2709756",
+    "2709755"
+   ],
+   "tos": [
+    "2709749",
+    "2709747",
+    "2709746"
+   ]
+  },
+  "8": {
+   "toplam_akts": 32,
+   "zorunlu": [
+    "2709853"
+   ],
+   "secmeli": [
+    "2709804",
+    "2709807",
+    "2709811",
+    "2709814",
+    "2709817",
+    "2709818",
+    "2709819",
+    "2709820",
+    "2709822",
+    "2709825",
+    "2709831",
+    "2709832",
+    "2709833",
+    "2709834",
+    "2709835",
+    "2709837",
+    "2709838",
+    "2709844",
+    "2709856"
+   ],
+   "tos": [
+    "2709748",
+    "2709849",
+    "2709846"
+   ]
+  }
+ },
+ "notlar": [
+  [
+   5,
+   "Not: Öğrenci bu dönem altı (6) tane zorunlu bir (1) tane seçmeli ders almak zorundadır."
+  ],
+  [
+   6,
+   "Not: Öğrenci bu dönem altı (6) tane zorunlu bir (1) tane seçmeli ders almak zorundadır."
+  ],
+  [
+   7,
+   "Not: Öğrenci bu dönem M.U. I dersini ve altı (6) tane seçmeli ders ve bir (1) tane T.O.S. ders almak zorundadır. Bu dönem için 2 AKTS fazla alınacaktır. Bu durum, T.O.S. derslerinin AKTS’leri 4 kredi olduğundandır."
+  ],
+  [
+   8,
+   "Not: Öğrenci bu dönem M.U. II dersini ve altı (6) tane seçmeli ders ve bir (1) tane T.O.S. ders almak zorundadır. Bu dönem için 2 AKTS fazla alınacaktır. Bu durum, T.O.S. derslerinin AKTS’leri 4 kredi olduğundandır."
+  ]
+ ],
+ "genel_toplam_akts": 244
+}

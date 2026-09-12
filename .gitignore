@@ -1,0 +1,33 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# --- Kimlik bilgisi: ASLA depoya girmemeli ---
+.env
+
+# --- Öğrenci verisi: ASLA depoya girmemeli ---
+# cikti/     : pano + her öğrencinin ham OBİS sayfası
+# chrome-*   : OBİS oturum çerezleri (kopyalayan sizin adınıza girebilir)
+# ornek_*    : testlerin GERÇEK veriden ürettiği fixture'lar
+cikti/
+chrome-profili/
+testler/ornek_pano.html
+testler/ornek_transkript.html
+bolum_onayi.json
+veri/bolum.taslak.json
+
+# --- Bölüm belgeleri (büyük ikili dosyalar) ---
+# Çözülmüş hâlleri veri/*.json olarak depoda duruyor; belgelerin
+# kendisi bölümün malıdır, yayımlamak size kalmış.
+veri/*.docx
+veri/*.xlsx
+veri/mufredat/
+*.pdf
+
+# --- Derleme çıktısı ---
+DanismanOzeti.exe
+build/
+dist/
+*.spec
