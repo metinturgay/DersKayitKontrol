@@ -51,7 +51,7 @@ ISTEGE_BAGLI = ["mufredat_arsivi.json"]
 GIZLI = ["bs4", "dotenv", "openpyxl", "yollar", "bolum", "eslestirme",
          "yonetmelik", "ozet", "rapor", "mufredat", "mufredat_arsivi",
          "ders_programi", "akts_degisimi", "ders_kayit",
-         "panoyu_yenile", "kurulum"]
+         "panoyu_yenile", "kurulum", "kaynaklar"]
 
 
 def main():

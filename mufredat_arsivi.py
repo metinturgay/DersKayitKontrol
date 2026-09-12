@@ -50,8 +50,16 @@ import eslestirme as es
 import mufredat
 import yollar
 
-KLASOR = yollar.veri("mufredat")
-ARSIV_JSON = yollar.veri("mufredat_arsivi.json")
+def arsiv_klasoru(yazmak_icin=False):
+    """Yıllık belgelerin klasörü. Danışmanın verdiği belgeler yerel
+    kuruluma kopyalanır; gömülü exe'ye docx gömülmez."""
+    return (yollar.veri_yaz("mufredat") if yazmak_icin
+            else yollar.veri("mufredat"))
+
+
+def arsiv_json(yazmak_icin=False):
+    return (yollar.veri_yaz("mufredat_arsivi.json") if yazmak_icin
+            else yollar.veri("mufredat_arsivi.json"))
 
 # "2024", "2024-2025", "2024_2025 Okutulacak Dersler" -> 2024
 _YIL = re.compile(r"(20\d{2})")
@@ -65,7 +73,7 @@ def yil_coz(dosya_adi):
 
 def belgeleri_bul(klasor=None):
     """[(giriş yılı, dosya yolu)] — yıla göre sıralı."""
-    klasor = Path(klasor or KLASOR)
+    klasor = Path(klasor or arsiv_klasoru())
     if not klasor.is_dir():
         return []
     bulunan = {}
@@ -285,7 +293,7 @@ def kaydet(klasor=None, cikti=None):
     veri = turet(arsiv)
     veri["okunamayan"] = [{"yil": y, "dosya": d, "hata": h}
                           for y, d, h in hatalar]
-    yol = Path(cikti) if cikti else ARSIV_JSON
+    yol = Path(cikti) if cikti else arsiv_json(yazmak_icin=True)
     yol.parent.mkdir(parents=True, exist_ok=True)
     yol.write_text(json.dumps(veri, ensure_ascii=False, indent=1),
                    encoding="utf-8")
@@ -293,7 +301,7 @@ def kaydet(klasor=None, cikti=None):
 
 
 def yukle(yol=None):
-    yol = Path(yol) if yol else ARSIV_JSON
+    yol = Path(yol) if yol else arsiv_json()
     if not yol.exists():
         return None
     return json.loads(yol.read_text(encoding="utf-8"))

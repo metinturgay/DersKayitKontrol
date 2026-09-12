@@ -481,12 +481,13 @@ Aşağıdakiler çoğunlukla başka modüller tarafından kullanılır; `bolum.p
 | `eslestirme.py` | Ders adı normalleştirme ve benzerlik. Yönetmelikten ayrı durur çünkü kurulum sihirbazının profil *üretmeden önce* ders adlarını eşleştirmesi gerekir. |
 | `ozet.py` | Kural motoru. Ders kaydı + transkript + yönetmeliği birleştirip `yapilacak / dikkat / bilgi` uyarıları üretir. Kontenjan planı da burada. |
 | `rapor.py` | HTML panoyu yazar. Veri sayfaya gömülür; sunucu, internet ya da kütüphane gerekmez. |
-| `ders_programi.py` | Ders programı xlsx'ini çözer, çakışan ders çiftlerini çıkarır. Sayfa düzeni ve asenkron/esnek ders listeleri bölüm profilinden gelir. |
-| `mufredat.py` | Müfredat belgesini (docx) çözer. AKTS için tek doğru kaynak. |
+| `ders_programi.py` | Ders programı xlsx'ini çözer, çakışan ders çiftlerini çıkarır. Sayfa düzeni (saat sütunları, gün ve sınıf sütunu) DOSYADAN çözülür; ders okunamazsa `ProgramAnlasilmadi` yükseltir. |
+| `mufredat.py` | Müfredat belgesini (docx) çözer. AKTS için tek doğru kaynak. Sütunlar tablonun BAŞLIK satırından eşlenir; belge anlaşılmazsa `BelgeAnlasilmadi` yükseltir. |
 | `akts_degisimi.py` | AKTS'si değişmiş dersleri **giriş yılı (kohort) başına** çıkarır; panonun AKTS Değişimi sekmesini besler. Eski değeri sırayla arar: kohortun kendi transkript kaydı → referans fotoğrafı → o kohort girdiğinde yürürlükte olan müfredat belgesi → hiçbiri yoksa "değişmemiş". |
 | `kurulum.py` | Yeni bir bölüm için kurulum sihirbazı. Belgelerden türetir, yalnız türetilemeyeni sorar. |
+| `kaynaklar.py` | Açılıştaki belge toplama akışı: belgeleri ister, ÇÖZÜMLEYEREK doğrular, giriş yılını teyit ettirir ve yerel kurulumu kurar. |
 | `paylas.py` | Başka bir danışmana verilebilecek temiz bir kopya hazırlar: öğrenci verisi, şifre ve tarayıcı profili dışarıda kalır. |
-| `yollar.py` | Dosya yolları. Exe içinde OKUNAN kök (gömülü veri) ile YAZILAN kökü (exe'nin yanı) ayırır; sys.frozen'ı bilen tek yer. |
+| `yollar.py` | Dosya yolları. OKUNAN kök (gömülü veri), YAZILAN kök (exe'nin yanı) ve YEREL KURULUM katmanı (`veri-yerel/`) burada ayrılır; `sys.frozen`'ı bilen tek yer. |
 | `baslat.py` | Exe'nin giriş noktası: giriş bilgisini sorar, tarar, panoyu üretip açar. |
 | `exe_yap.py` | Tek dosyalık `DanismanOzeti.exe` üretir. |
 | `ornek_uret.py` | Yayımlanabilir **örnek pano** üretir — tamamen uydurma öğrencilerle. `cikti/` klasörüne hiç bakmaz. |
@@ -511,6 +512,8 @@ python test_kohort.py         # giriş yılına göre AKTS tabanı
 python test_bolum.py          # bölüm profili gerçekten okunuyor mu
 python test_arsiv.py          # çok yıllı müfredat arşivi ve türetimler
 python test_kurulum.py        # yeni bir bölüm sıfırdan kurulabiliyor mu
+python test_kaynaklar.py      # belge toplama akışı
+python test_yollar.py         # yerel kurulum katmanı (veri-yerel)
 python test_pano.py           # özet motoru + pano (node varsa sayfayı çizdirir)
 ```
 
@@ -551,7 +554,7 @@ kaçtı** — ve kaçan üçü, tam da o gün düzeltilmiş ama testi yazılmam�
 kusurlardı (azami süre sınırı, DD'nin not yükseltme kapsamı,
 kompozisyona giden kod kümesi). Üçü için de test yazıldı.
 
-Toplam 589 kontrol. Her biri kaç kontrolün geçtiğini basar. Kod
+Toplam 674 kontrol. Her biri kaç kontrolün geçtiğini basar. Kod
 değiştirdikten sonra onunu da çalıştırın. `test_pano.py` ve `test_eslestirme.py`, varsa gerçek sayfayı
 (`cikti/ders_sayfasi_230000003.html`) kullanır; yoksa gömülü test verisine
 düşer.

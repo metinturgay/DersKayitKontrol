@@ -196,9 +196,29 @@ değildir.
 python baslat.py
 ```
 
-İlk çalıştırmada araç **hangi bölüm için yapılandırıldığını gösterip
-teyit ister**. Kendi bölümünüz değilse durur ve kurulum yolunu söyler.
-Bu soru bir kez sorulur.
+Araç **sicil/şifre sormadan ÖNCE** hangi bölüm ve hangi belgelerle
+çalışacağını yollarıyla gösterip teyit ister:
+
+```
+  BÖLÜM     : Selçuk Üniversitesi Fen Fakültesi Matematik Bölümü
+  Okutulacak Dersler belgeleri:
+      2026 girişliler    ...eri-yerel\mufredat6.docx
+  Ders programı:
+      ...eri-yerel\ders_programi.xlsx
+
+  Bu belgelerle devam edilsin mi? [e / h / i]
+```
+
+**`h`** derseniz belgelerinizi orada verebilirsiniz — yukarıdaki 1. ve 2.
+adımı önceden yapmanız şart değil. Belgeler tek tek istenir (istediğiniz
+kadar, `tamam` ile biter), her biri **alınır alınmaz çözümlenir** ve ne
+okunduğu yazılır; anlaşılmayan belge kabul edilmez. Her belgenin **giriş
+yılı teyit ettirilir** — asla sessizce tahmin edilmez.
+
+Belgeleriniz programın yanındaki `veri-yerel/` klasörüne kalıcı olarak
+yazılır. Kurulum bitince program yeniden başlar.
+
+Bu soru, **belgeler değişmediği sürece** bir daha sorulmaz.
 
 Sonra OBİS'e girer, danışmanı olduğunuz öğrencileri tek tek açar, okur,
 kilidi bırakır ve `cikti/danisman_ozeti.html` dosyasını üretip açar.
@@ -215,6 +235,7 @@ sürer.
 | Ders programı yenilendi | `python ders_programi.py` |
 | Müfredat belgesi yenilendi | `python mufredat.py` |
 | Müfredat arşivi değişti | `python mufredat_arsivi.py --json` |
+| Belgeleri baştan vereceğim | `python baslat.py` → `h` |
 | Her şey yerinde mi? | `python baslat.py --tani` |
 
 Ayrıntılı kullanım: **[KULLANIM.md](KULLANIM.md)**
@@ -279,9 +300,22 @@ Pano tek bir HTML dosyasıdır — sunucu, internet, kütüphane gerekmez.
 ### Tasarım ilkeleri
 
 **Sessiz yanlış, gürültülü hatadan beterdir.** Bölüm profili yoksa program
-açılmaz. Ders programında beklenen sayfa yoksa hata verir. Transkriptten
-hesaplanan GANO OBİS'in yazdığıyla tutmuyorsa uyarı çıkar. Hiçbir yerde
-"varsayılan değere düşme" yoktur.
+açılmaz. Belge okunup da anlaşılmazsa istisna atılır — ne okunduğu ve
+neyin beklendiği yazılır. Ders programından hiç ders çıkmazsa durur.
+Transkriptten hesaplanan GANO OBİS'in yazdığıyla tutmuyorsa uyarı çıkar.
+Hiçbir yerde "varsayılan değere düşme" yoktur.
+
+Bu ilke ölçülerek uygulandı. Belge okuyucuları bir zamanlar altı ayrı
+şablon farkında **sessizce boş ya da yanlış** sonuç veriyordu: farklı
+sütun sırasında AKTS yanlış sütundan okunuyor, arap rakamlı yarıyıl
+başlığı hiç tanınmıyor, bir sütun kaymış ders programı **sıfır çakışma**
+üretiyordu. Hiçbirinde istisna atılmıyordu.
+
+**Tümü-ya-da-hiç yapılandırma.** Danışmanın verdiği belgeler
+`veri-yerel/` klasörüne yazılır ve ancak kurulum **damgası** atıldığında
+devreye girer. Yarım kalmış kurulum yok sayılır. Dosya başına "yoksa
+gömülüye dön" olsaydı, bir bölümün planı + başka bölümün ders kataloğu
+gibi karışık bir yapılandırma oluşur ve hiçbir denetim bunu yakalayamazdı.
 
 **Uydurma üretmeyiz.** Arşivin en eski yılında zaten duran bir ders
 "sonradan eklendi" sayılmaz — öncesini bilmiyoruz. Kohortun AKTS tabanı
@@ -318,6 +352,8 @@ python test_kurallar.py     # yönetmelik kuralları
 python test_bolum.py        # bölüm profili gerçekten okunuyor mu
 python test_arsiv.py        # çok yıllı müfredat arşivi
 python test_kurulum.py      # yeni bir bölüm sıfırdan kurulabiliyor mu
+python test_kaynaklar.py    # belge toplama akışı
+python test_yollar.py       # yerel kurulum katmanı (veri-yerel)
 python test_pano.py         # özet motoru + panoyu node ile çizdirir
 python test_transkript.py   # transkript çözümleyici
 python test_eslestirme.py   # eski kod / yeni kod eşleştirmesi

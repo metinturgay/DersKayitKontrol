@@ -33,9 +33,11 @@ import eslestirme as es
 import mufredat_arsivi as ma
 import yollar
 
+# Modül düzeyinde tutuluyor ama test edilebilsin diye değiştirilebilir;
+# gerçek çözüm yollar.veri()/veri_yaz() üzerinden yapılıyor.
 VERI = yollar.veri()
-ARSIV = VERI / "mufredat"
-PROGRAM_XLSX = VERI / "ders_programi.xlsx"
+ARSIV = yollar.veri("mufredat")
+PROGRAM_XLSX = yollar.veri("ders_programi.xlsx")
 
 
 # =========================================================================
@@ -332,7 +334,7 @@ def taslak(cevaplar=None, klasor=None):
 
 
 def yaz(profil, hedef=None):
-    yol = Path(hedef or bolum.yol())
+    yol = Path(hedef or bolum.yol(yazmak_icin=True))
     yol.parent.mkdir(parents=True, exist_ok=True)
     yol.write_text(json.dumps(profil, ensure_ascii=False, indent=1) + "\n",
                    encoding="utf-8")
