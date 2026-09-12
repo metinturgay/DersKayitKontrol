@@ -426,7 +426,25 @@ def _gercek_ogrenciler():
             io.open(tp, encoding="utf-8").read() if os.path.exists(tp) else "")
         toplam.append((k, ozet.ogrenci_ozeti(
             k, icinde_bulunulan_yil=2026, program=program, mufredat=muf)))
-    _GERCEK = toplam
+
+    # Transkripti okunamayan öğrenci için ogrenci_ozeti KISA bir sözlük
+    # döner (yalnız uyarı + transkript_hatasi). Bu doğru davranış: veri
+    # yoksa hesap uydurulmaz. Ama analiz testleri tam sözlük bekliyor;
+    # burada bir kez süzüp bildiriyoruz. Ölçüldü: tarama yarıda kesilen
+    # TEK bir öğrenci bütün testi KeyError ile düşürüyordu.
+    okunamayan = [(k, o) for k, o in toplam if "donem_durumu" not in o]
+    if okunamayan:
+        print("  (%d öğrencinin transkripti okunamamış, analizden "
+              "çıkarıldı: %s)"
+              % (len(okunamayan),
+                 ", ".join(str(o.get("no")) for _k, o in okunamayan[:4])))
+        for _k, o in okunamayan:
+            if not any(u["baslik"] == "Transkript okunamadı"
+                       for u in (o.get("uyarilar") or [])):
+                print("  [HATA] %s: okunamayan transkript UYARI ÜRETMİYOR"
+                      % o.get("no"))
+                OK.append(False)
+    _GERCEK = [(k, o) for k, o in toplam if "donem_durumu" in o]
     return _GERCEK
 
 
@@ -866,6 +884,11 @@ def _her_sinif_calisiyor_mu():
     if not gercek:
         print("  (cikti/ boş, atlandı)")
         return
+    # Transkripti okunamayan öğrenci için ogrenci_ozeti KISA bir sözlük
+    # döner (yalnız uyarı + transkript_hatasi). Bu doğru davranış: veri
+    # yoksa hesap uydurulmaz. Test bunu ATLAMALI, çökmemeli - ölçüldü,
+    # tarama yarıda kesilen tek bir öğrenci bütün testi KeyError ile
+    # düşürüyordu.
     grup = collections.defaultdict(list)
     for _, o in gercek:
         grup[o["donem_durumu"]["hedef_donem"]].append(o)
@@ -1204,16 +1227,11 @@ def _sessiz_temiz_var_mi():
     if not sayfalar:
         print("  (cikti/ boş, atlandı)")
         return
-    program, muf = dprog.yukle(), mfr.yukle()
+    # Ortak yükleyiciyi kullanıyoruz: aynı 60 sayfayı ikinci kez
+    # ayrıştırmak testi dakikalarca uzatıyordu, üstelik transkripti
+    # okunamayan öğrenci burada da KeyError'a yol açıyordu.
     sessiz = []
-    for p in sayfalar:
-        no = re.search(r"ders_sayfasi_(\d+)\.html", p).group(1)
-        k = dk.ders_kaydini_coz(io.open(p, encoding="utf-8").read())
-        tp = os.path.join(cikti, "transkript_%s.html" % no)
-        k["transkript"] = dk.transkripti_coz(
-            io.open(tp, encoding="utf-8").read() if os.path.exists(tp) else "")
-        o = ozet.ogrenci_ozeti(k, icinde_bulunulan_yil=2026,
-                               program=program, mufredat=muf)
+    for k, o in _gercek_ogrenciler():
         if o["sayim"].get(ozet.YAPILACAK):
             continue
         komp = o.get("kompozisyon") or {}

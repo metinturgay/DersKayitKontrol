@@ -22,8 +22,11 @@ from pathlib import Path
 import bolum
 import yollar
 
-VERI = yollar.veri()
-CAKISMA_JSON = VERI / "cakismalar.json"
+def cakisma_json(yazmak_icin=False):
+    """Çakışma dosyasının yolu — fonksiyon, çünkü yerel kurulum katmanı
+    import'tan sonra devreye giriyor."""
+    return (yollar.veri_yaz("cakismalar.json") if yazmak_icin
+            else yollar.veri("cakismalar.json"))
 
 # Sayfa düzeni ve istisna dersleri BÖLÜM KARARIDIR: her fakültenin ders
 # programı aynı şablonla çizilmiyor, ders saatleri de her yerde aynı
@@ -39,6 +42,125 @@ GUNLER = tuple(_P["gunler"])
 
 # Ders adı olmayan, programda yer tutan hücreler
 YOKSAY = {"", "-", "BÖLÜM BAŞKANI", "DERSLİK", "SAAT"}
+
+
+class ProgramAnlasilmadi(Exception):
+    """Ders programı okundu ama içinden ders çıkmadı.
+
+    Bu sınıfın var olması bilinçli: eskiden saat sütunları beklenen
+    yerde olmayan bir dosyada programi_oku() SIFIR ders döndürüyor,
+    hiçbir istisna atmıyordu. Sonuç: pano "çakışma yok" diyor ve
+    danışman buna inanıyordu. Ölçüldü - bir sütun kaydırılmış gerçek
+    programda 41 ders yerine 0 ders okundu, ekranda tek uyarı yok.
+    """
+
+
+# Saat aralığı: "08:30-09:15", "08.30 - 09.15", "0830-0915" hepsi olur.
+_SAAT_DESENI = re.compile(
+    r"^\s*(\d{1,2})[:.\s]?(\d{2})\s*[-–—/]\s*(\d{1,2})[:.\s]?(\d{2})\s*$")
+
+
+def saat_mi(deger):
+    """Hücre bir saat aralığı mı? Öyleyse 'HH:MM-HH:MM' döner."""
+    m = _SAAT_DESENI.match(str(deger or ""))
+    if not m:
+        return None
+    a, b, c, d = (int(x) for x in m.groups())
+    if not (0 <= a <= 23 and 0 <= b <= 59 and 0 <= c <= 23 and 0 <= d <= 59):
+        return None
+    return "%02d:%02d-%02d:%02d" % (a, b, c, d)
+
+
+def _gun_sutunu_mu(ws, sutun, gunler, azami_satir):
+    """Bu sütunda gün adı geçiyor mu? Kaç tane?"""
+    sayi = 0
+    for r in range(1, azami_satir + 1):
+        a = _gun_adi(ws.cell(r, sutun).value)
+        if a and any(a.startswith(g[:4]) for g in gunler):
+            sayi += 1
+    return sayi
+
+
+def duzen_coz(ws, gunler=None):
+    """Sayfanın yerleşimini DOSYADAN çıkarır.
+
+    Döner: {"saat_sutunlari": {sütun no: saat}, "gun_sutunu": n,
+            "sinif_sutunu": n, "saat_satirlari": {satır no}}
+
+    Neden dosyadan: saat sütunlarının hangi harfte olduğu bölüme göre
+    değişiyor. Profilden okunduğunda, bir sütun kaymış bir dosyada her
+    hücre atlanıyor ve sonuç SESSİZCE sıfır çakışma oluyordu. Dosyanın
+    kendi saat başlığı satırı zaten doğruyu söylüyor; ona bakmamak için
+    sebep yok.
+    """
+    gunler = tuple(gunler or GUNLER)
+    azami_satir = min(ws.max_row, 400)
+    azami_sutun = min(ws.max_column, 60)
+
+    # 1. Saat başlıklarını tara: hangi sütun, hangi satır
+    sutun_saat = {}       # sütun no -> {saat: kaç kez}
+    saat_satirlari = set()
+    for r in range(1, azami_satir + 1):
+        satirda = 0
+        for c in range(1, azami_sutun + 1):
+            saat = saat_mi(ws.cell(r, c).value)
+            if not saat:
+                continue
+            sutun_saat.setdefault(c, {})
+            sutun_saat[c][saat] = sutun_saat[c].get(saat, 0) + 1
+            satirda += 1
+        if satirda >= 3:          # saat başlığı satırı
+            saat_satirlari.add(r)
+
+    # Her sütun için EN SIK görülen saat etiketi geçerlidir.
+    saat_sutunlari = {}
+    for c, sayimlar in sutun_saat.items():
+        saat_sutunlari[c] = max(sayimlar.items(), key=lambda x: x[1])[0]
+
+    # 2. Gün sütunu: gün adı en çok hangi sütunda geçiyor?
+    gun_sutunu, en_cok = None, 0
+    for c in range(1, min(azami_sutun, 8) + 1):
+        n = _gun_sutunu_mu(ws, c, gunler, azami_satir)
+        if n > en_cok:
+            gun_sutunu, en_cok = c, n
+
+    # 3. Sınıf sütunu: gün sütununun hemen sağında, küçük tam sayılar
+    sinif_sutunu = None
+    if gun_sutunu:
+        for c in (gun_sutunu + 1, gun_sutunu + 2):
+            if c in saat_sutunlari or c > azami_sutun:
+                continue
+            sayi = 0
+            for r in range(1, azami_satir + 1):
+                v = str(ws.cell(r, c).value or "").strip()
+                if v.isdigit() and 1 <= int(v) <= 9:
+                    sayi += 1
+            if sayi >= 2:
+                sinif_sutunu = c
+                break
+
+    return {"saat_sutunlari": saat_sutunlari, "gun_sutunu": gun_sutunu,
+            "sinif_sutunu": sinif_sutunu, "saat_satirlari": saat_satirlari}
+
+
+def _sayfa_sec(kitap):
+    """Hangi sayfa okunacak? Profildeki ad varsa o, yoksa EN ÇOK saat
+    başlığı taşıyan sayfa - ve hangisi seçildiği yazdırılır."""
+    if SAYFA_ADI in kitap.sheetnames:
+        return kitap[SAYFA_ADI], SAYFA_ADI, False
+    en_iyi, en_cok = None, 0
+    for ad in kitap.sheetnames:
+        ws = kitap[ad]
+        n = len(duzen_coz(ws)["saat_sutunlari"])
+        if n > en_cok:
+            en_iyi, en_cok = ad, n
+    if not en_iyi:
+        raise ProgramAnlasilmadi(
+            "Ders programında saat başlığı olan bir sayfa bulunamadı.\n"
+            "Dosyadaki sayfalar: %s\n"
+            "Beklenen: hücrelerinde '08:30-09:15' gibi saat aralıkları "
+            "olan bir sayfa." % ", ".join(kitap.sheetnames))
+    return kitap[en_iyi], en_iyi, True
 
 # Programda TOS dersleri tek tek yazılmamış, ortak bir "TOS" bloğu var.
 # Hangi TOS dersi alınırsa alınsın o saatte olacağı için tüm TOS kodları
@@ -104,61 +226,93 @@ def _gun_adi(hucre):
     return harfler.upper() or None
 
 
-def programi_oku(xlsx_yolu=None):
-    """{ders adı: {(gün, saat), ...}} ve ders başına ayrıntı döndürür."""
+def programi_oku(xlsx_yolu=None, duzen=None):
+    """{ders adı: {(gün, saat), ...}} ve ders başına ayrıntı döndürür.
+
+    Yerleşim (hangi sütun hangi saat, gün ve sınıf nerede) DOSYADAN
+    çözülür; profildeki program ayarları yalnız yedektir. Eskiden
+    yerleşim profilden geliyordu ve bir sütun kaymış bir dosyada her
+    hücre sessizce atlanıp SIFIR çakışma üretiliyordu (ölçüldü).
+    """
     import openpyxl
 
     if xlsx_yolu is None:
-        adaylar = sorted(glob.glob(str(Path.home() / "Desktop" / "*Ders Program*.xlsx")))
+        adaylar = sorted(glob.glob(str(Path.home() / "Desktop"
+                                       / "*Ders Program*.xlsx")))
         if not adaylar:
             raise SystemExit("Ders programı xlsx bulunamadı.")
         xlsx_yolu = adaylar[0]
 
     kitap = openpyxl.load_workbook(xlsx_yolu, data_only=True)
-    if SAYFA_ADI not in kitap.sheetnames:
-        raise SystemExit(
-            "Ders programında %r sayfası yok. Dosyadaki sayfalar: %s\n"
-            "Doğru adı veri/bolum.json -> program.sayfa_adi altına yazın."
-            % (SAYFA_ADI, ", ".join(kitap.sheetnames)))
-    ws = kitap[SAYFA_ADI]
+    ws, sayfa_adi, tahmin = _sayfa_sec(kitap)
+    if tahmin:
+        print("  (ders programı: %r sayfası bulunamadı, %r kullanılıyor)"
+              % (SAYFA_ADI, sayfa_adi))
 
-    yerlesim = {}     # ders adı -> {(gün, saat)}
+    d = duzen or duzen_coz(ws)
+    saat_sutunlari = d["saat_sutunlari"]
+    gun_sutunu = d["gun_sutunu"]
+    sinif_sutunu = d["sinif_sutunu"]
+    saat_satirlari = d["saat_satirlari"]
+
+    if not saat_sutunlari:
+        raise ProgramAnlasilmadi(
+            "Ders programında saat başlığı bulunamadı: %s (sayfa %r)\n"
+            "Beklenen: '08:30-09:15' gibi saat aralıkları içeren bir "
+            "başlık satırı." % (xlsx_yolu, sayfa_adi))
+    if not gun_sutunu:
+        raise ProgramAnlasilmadi(
+            "Ders programında gün sütunu bulunamadı: %s (sayfa %r)\n"
+            "Aranan gün adları: %s\n"
+            "Gün adları başka yazılıyorsa veri/bolum.json -> "
+            "program.gunler altına ekleyin."
+            % (xlsx_yolu, sayfa_adi, ", ".join(GUNLER)))
+
+    yerlesim = {}     # ders adı -> {grup: {(gün, saat)}}
     ayrinti = {}      # ders adı -> {"derslikler": set, "siniflar": set}
     gun = None
     sinif = None
 
     for r in range(1, ws.max_row + 1):
-        a = _gun_adi(ws.cell(r, 1).value)
+        a = _gun_adi(ws.cell(r, gun_sutunu).value)
         if a:
             for g in GUNLER:
                 if a.startswith(g[:4]):
                     gun = g
                     break
-        b = ws.cell(r, 2).value
-        if b is not None and str(b).strip().isdigit():
-            sinif = int(str(b).strip())
+        if sinif_sutunu:
+            b = ws.cell(r, sinif_sutunu).value
+            if b is not None and str(b).strip().isdigit():
+                sinif = int(str(b).strip())
 
-        # Saat başlığı satırı mı? (C sütununda saat yazıyorsa)
-        if str(ws.cell(r, 3).value or "").strip() in SAAT_SUTUNLARI.values():
+        if r in saat_satirlari:      # saat başlığı satırı
             continue
         if gun is None:
             continue
 
-        for sutun_no in range(3, 14):
-            harf = _sutun_harfi(sutun_no)
-            saat = SAAT_SUTUNLARI.get(harf)
-            if not saat:
-                continue
+        for sutun_no, saat in saat_sutunlari.items():
             ad, derslik, grup = _ders_adi(ws.cell(r, sutun_no).value)
             if not ad or ad.upper() in YOKSAY:
                 continue
+            if saat_mi(ad):          # başlık satırı kaçmışsa ders sanma
+                continue
             yerlesim.setdefault(ad, {}).setdefault(grup or "", set()).add(
                 (gun, saat))
-            bilgi = ayrinti.setdefault(ad, {"derslikler": set(), "siniflar": set()})
+            bilgi = ayrinti.setdefault(ad, {"derslikler": set(),
+                                            "siniflar": set()})
             if derslik:
                 bilgi["derslikler"].add(derslik)
             if sinif:
                 bilgi["siniflar"].add(sinif)
+
+    if not yerlesim:
+        raise ProgramAnlasilmadi(
+            "Ders programından HİÇ DERS okunamadı: %s (sayfa %r)\n"
+            "Saat sütunu %d, gün sütunu %s, sınıf sütunu %s bulundu; "
+            "ama hiçbir hücrede ders adı yok.\n"
+            "Sayfa doğru mu? Dosyadaki sayfalar: %s"
+            % (xlsx_yolu, sayfa_adi, len(saat_sutunlari), gun_sutunu,
+               sinif_sutunu, ", ".join(kitap.sheetnames)))
 
     return yerlesim, ayrinti
 
@@ -233,7 +387,7 @@ def kaydet(xlsx_yolu=None, cikti=None):
         },
         "cakismalar": ciftler,
     }
-    cikti = Path(cikti) if cikti else CAKISMA_JSON
+    cikti = Path(cikti) if cikti else cakisma_json(yazmak_icin=True)
     cikti.parent.mkdir(parents=True, exist_ok=True)
     cikti.write_text(json.dumps(veri, ensure_ascii=False, indent=1),
                      encoding="utf-8")
@@ -304,7 +458,7 @@ def cakisma_dizini(veri):
 
 def yukle(yol=None):
     """Üretilmiş cakismalar.json'u okur. Yoksa None."""
-    yol = Path(yol) if yol else CAKISMA_JSON
+    yol = Path(yol) if yol else cakisma_json()
     if not yol.exists():
         return None
     return json.loads(yol.read_text(encoding="utf-8"))

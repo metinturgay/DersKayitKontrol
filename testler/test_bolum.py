@@ -269,9 +269,30 @@ def _teyit_kontrolu():
     kaynak = io.open(os.path.join(KOK, "baslat.py"),
                      encoding="utf-8").read()
     kontrol("teyit ana akışta soruluyor", True,
-            "bolum_teyidi(nerede)" in kaynak)
-    kontrol("hayır cevabı taramayı DURDURUYOR", True,
-            "if not bolum_teyidi(nerede):" in kaynak)
+            "kaynak_teyidi(sor)" in kaynak)
+    kontrol("teyit üç sonuç veriyor", True,
+            all(x in kaynak for x in ('== "dur"', '== "kur"')))
+
+    # SIRA: teyit ve belge akışı SİCİL/ŞİFREDEN ÖNCE olmalı. Yanlış
+    # bölümün belgeleriyle OBİS'e girmenin anlamı yok; üstelik
+    # kullanıcıdan şifresini istemeden önce neyle çalışacağımızı
+    # göstermek doğrusu.
+    govde = kaynak.split("def main(")[1]
+    yerler = {ad: govde.find(ad) for ad in
+              ("kaynak_teyidi(sor)", "belge_akisi(sor)",
+               "ayarlari_oku()", "tek_ogrenci_sor()")}
+    kontrol("teyit, giriş bilgilerinden ÖNCE", True,
+            0 <= yerler["kaynak_teyidi(sor)"] < yerler["ayarlari_oku()"])
+    kontrol("belge akışı, giriş bilgilerinden ÖNCE", True,
+            0 <= yerler["belge_akisi(sor)"] < yerler["ayarlari_oku()"])
+    kontrol("giriş bilgileri, öğrenci sorusundan önce", True,
+            yerler["ayarlari_oku()"] < yerler["tek_ogrenci_sor()"])
+
+    # Kurulumdan sonra YENİDEN BAŞLATMA: modül sabitleri import anında
+    # donuyor; aynı çalışmada taramak eski bölümün planıyla hesaplamak
+    # demek olurdu.
+    kontrol("kurulumdan sonra yeniden başlatılıyor", True,
+            "_yeniden_baslat()" in kaynak)
     kontrol("teyit kurulum yolunu gösteriyor", True,
             "kurulum.py" in kaynak)
     kontrol("teyit yazılan köke yazılıyor", True,

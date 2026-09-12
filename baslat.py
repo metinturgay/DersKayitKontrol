@@ -13,6 +13,7 @@ için öğrenci kilidini bırakmaktır.
 import datetime
 import io
 import json
+import os
 import sys
 import traceback
 import webbrowser
@@ -100,72 +101,158 @@ def onay_yolu():
     return yollar.yazilan_kok() / ONAY_DOSYASI
 
 
-def bolum_teyidi(nerede):
-    """İlk çalıştırmada 'bu sizin bölümünüz mü?' diye sorar.
+def kaynak_parmak_izi():
+    """Teyidin neye verildiğini özetler.
 
-    Neden gerekli
-    -------------
-    Araç bölüme özgü bir profille çalışır (veri/bolum.json). Bir
-    kopyayı ya da exe'yi alan danışmanın elinde BAŞKA bir bölümün
-    profili olabilir; program yine çalışır, pano yine dolar ve
-    sayıların hepsi o bölümün planına göre hesaplanır. Başlıkta bölüm
-    adını yazmak görünürlük sağlar ama kimse başlığı okumaz.
-
-    Bir kez sorulur; cevap exe'nin yanına yazılır. Profil değişirse
-    (başka bir bölüm için yeniden yapılandırılırsa) yeniden sorulur.
-
-    Cevap alınamazsa (stdin yok, otomatik çalıştırma) SORU ATLANIR ama
-    teyit YAZILMAZ: bir dahaki elle çalıştırmada yine sorar. Otomasyonu
-    kilitlememek için böyle.
+    Yalnız bölüm ADI tutulsaydı, danışman belgeleri değiştirdiğinde
+    soru bir daha sorulmazdı. Parmak izi belgeleri de kapsıyor:
+    kaynak değişirse teyit yenilenir.
     """
+    import bolum
+    import kaynaklar
+
+    parcalar = [bolum.tanim(), bolum.kaynak()]
+    for etiket, yol, _ek in kaynaklar.mevcut_kaynaklar():
+        parcalar.append("%s=%s" % (etiket, os.path.basename(yol)))
+    p = kaynaklar.mevcut_program()
+    parcalar.append("program=%s" % (os.path.basename(p[0]) if p else "-"))
+    return " | ".join(parcalar)
+
+
+def teyit_okundu():
     yol = onay_yolu()
     try:
-        kayit = json.loads(io.open(str(yol), encoding="utf-8").read())
-        if kayit.get("bolum") == nerede:
-            return True
+        return json.loads(io.open(str(yol), encoding="utf-8").read())
     except Exception:                     # noqa: BLE001 - dosya yok/bozuk
-        pass
+        return None
 
-    print("")
-    print("-" * 70)
-    print("  Bu araç şu bölüm için yapılandırılmış:")
-    print("")
-    print("      %s" % nerede)
-    print("")
-    print("  Bütün AKTS hesapları, mezuniyet projeksiyonu ve ders")
-    print("  kompozisyonu denetimi BU BÖLÜMÜN planına göre yapılır.")
-    print("  Başka bir bölümün danışmanıysanız sonuçlar YANLIŞ olur.")
-    print("-" * 70)
+
+def teyit_yaz(imza, nerede):
+    yol = onay_yolu()
     try:
-        cevap = input("  Bu sizin bölümünüz mü? [e/h] ").strip().lower()
-    except (EOFError, KeyboardInterrupt):
+        io.open(str(yol), "w", encoding="utf-8").write(json.dumps(
+            {"bolum": nerede, "imza": imza,
+             "onay_tarihi": datetime.datetime.now()
+             .strftime("%Y-%m-%d %H:%M")},
+            ensure_ascii=False, indent=1))
+        return True
+    except OSError:
+        return False
+
+
+def kaynak_teyidi(sor):
+    """Bölümü ve KULLANILAN BELGELERİ gösterip teyit ister.
+
+    Sicil/şifreden ÖNCE çağrılır: yanlış bölümün belgeleriyle OBİS'e
+    girmenin bir anlamı yok.
+
+    Döner: "devam" | "kur" | "dur"
+    """
+    import bolum
+    import kaynaklar
+
+    nerede = bolum.tanim()
+    imza = kaynak_parmak_izi()
+    kayit = teyit_okundu()
+    if kayit and kayit.get("imza") == imza:
+        return "devam"
+
+    print("")
+    print("=" * 70)
+    print("  KULLANILACAK BÖLÜM VE BELGELER")
+    print("=" * 70)
+    kaynaklar.ozet_yaz()
+    print("")
+    print("  Bütün AKTS hesapları, mezuniyet projeksiyonu ve çakışma")
+    print("  denetimi BU belgelere göre yapılır.")
+    if kayit and kayit.get("bolum") == nerede:
         print("")
-        print("  (cevap alınamadı - bir dahaki çalıştırmada tekrar sorulacak)")
-        return True
+        print("  (Belgeler en son teyidinizden bu yana DEĞİŞTİ.)")
+    print("=" * 70)
 
-    if cevap.startswith("e"):
-        try:
-            io.open(str(yol), "w", encoding="utf-8").write(
-                json.dumps({"bolum": nerede,
-                            "onay_tarihi": datetime.datetime.now()
-                            .strftime("%Y-%m-%d %H:%M")},
-                           ensure_ascii=False, indent=1))
-            print("  Tamam. Bu soru bir daha sorulmayacak (%s)."
-                  % yol.name)
-        except OSError as e:
-            print("  (teyit kaydedilemedi: %s - her açılışta sorulacak)" % e)
-        return True
+    if not kaynaklar.etkilesim_var():
+        # Otomasyon: soru soramayız, asılı kalmak da olmaz.
+        print("  (etkileşimsiz çalışma - teyit atlandı)")
+        return "devam"
+
+    while True:
+        c = sor("  Bu belgelerle devam edilsin mi? "
+                "[e = evet / h = kendi belgelerimi vereceğim / "
+                "i = iptal] ").strip().lower()
+        if c.startswith("e"):
+            if not teyit_yaz(imza, nerede):
+                print("  (teyit kaydedilemedi - her açılışta sorulacak)")
+            return "devam"
+        if c.startswith("h"):
+            return "kur"
+        if c.startswith("i"):
+            return "dur"
+
+
+def belge_akisi(sor):
+    """Belgeleri toplar, kurar ve yeniden başlatma gerektiğini söyler.
+
+    Döner: True (kuruldu, yeniden başlatılmalı) | False (vazgeçildi)
+    """
+    import bolum
+    import kaynaklar
+    import kurulum
 
     print("")
-    print("  Durduruldu. Kendi bölümünüz için kurulum yapmalısınız:")
+    print("=" * 70)
+    print("  KENDİ BELGELERİNİZLE KURULUM")
+    print("=" * 70)
+
+    belgeler = kaynaklar.belge_dongusu(sor)
+    if not belgeler:
+        return False
+    program = kaynaklar.program_sor(sor)
+    if program is None:
+        return False
+
+    # Belgeden ÇIKMAYAN, insanın söylemesi gereken alanlar.
     print("")
-    print("      python kurulum.py --belgeler   hangi belgeler gerekli")
-    print("      python kurulum.py              kurulum sihirbazı")
+    print("  BÖLÜM BİLGİLERİ")
+    print("  " + "-" * 66)
+    mevcut = {}
+    try:
+        mevcut = (bolum.yukle() or {}).get("bolum") or {}
+    except SystemExit:
+        mevcut = {}
+    cevaplar = {
+        "universite": kurulum._sor("Üniversite",
+                                   mevcut.get("universite")
+                                   or "Selçuk Üniversitesi"),
+        "fakulte": kurulum._sor("Fakülte", ""),
+        "ad": kurulum._sor("Bölüm", ""),
+        "program_yili": kurulum._sor("Program kaç yıllık", 4, (2, 4, 5),
+                                     int),
+        "ogretim_yili": kurulum._sor("Öğretim yılı (örn. 2026-2027)", ""),
+    }
+    cevaplar["tos_azami_adet"] = kurulum._sor(
+        "Bir dönemde en çok kaç TOS (ortak seçmeli) dersi alınabilir",
+        1, tip=int)
+    cevaplar["acik_kapatma_yariyili"] = kurulum._sor(
+        "Müfredata sonradan eklenen ders varsa, eski kohortun açığı "
+        "hangi yarıyılın seçmeli havuzundan kapatılıyor", None, tip=int)
     print("")
-    print("  Bu bir exe ise kaynak kod sürümünü isteyin: exe, müfredatı")
-    print("  ve bölüm profilini İÇİNE gömdüğü için kendi bölümünüz")
-    print("  için yeniden derlenmesi gerekir.")
-    return False
+    print("  Sabit buluşma saati OLMAYAN dersler çakışma üretmez:")
+    cevaplar["asenkron_dersler"] = kurulum._liste_sor(
+        "Asenkron yürütülen dersler")
+    cevaplar["esnek_dersler"] = kurulum._liste_sor(
+        "Saati öğrenciyle ayarlanan dersler (uygulama, proje)")
+    cevaplar["uygulamali_dersler"] = kurulum._liste_sor(
+        "Laboratuvar / uygulama dersleri (devamsızlık hakkı %20)")
+
+    tamam, mesaj = kaynaklar.kur(belgeler, program, cevaplar)
+    print("")
+    if not tamam:
+        print("  KURULUM YAPILAMADI")
+        for satir in str(mesaj).splitlines():
+            print("    " + satir)
+        return False
+    print("  " + mesaj)
+    return True
 
 
 def bekle(mesaj=u"Kapatmak için ENTER'a basın... "):
@@ -195,6 +282,7 @@ def tani():
 
     print("")
     print("Bölüm profili")
+    print("  kaynak        : %s" % bolum.kaynak())
     # Araç artık Matematik'e gömülü değil; hangi bölüm için yapılandığı
     # ilk bakılacak şey. Yanlış profille çalışan bir exe her sayıyı
     # yanlış hesaplar ve bunu hiçbir yerde söylemez.
@@ -399,6 +487,32 @@ def pano_tazeligi(pano):
     return ("taze" if p + 2 >= h else "eski"), p, h
 
 
+def _yeniden_baslat():
+    """Programı taze bir süreçte yeniden açar.
+
+    Neden gerekli: yonetmelik.py, ders_programi.py ve ozet.py bölüm
+    profilini IMPORT ANINDA modül sabitlerine bağlıyor. Kurulumla
+    tarama aynı çalışmada olursa bu sabitler ESKİ değerde kalır ve
+    program hiç hata vermeden önceki bölümün planıyla hesaplar.
+
+    Yeniden başlatılamazsa (kısıtlı ortam) kullanıcıdan elle açması
+    istenir - sessizce eski ayarlarla devam edilmez.
+    """
+    try:
+        input("  Devam etmek için ENTER'a basın... ")
+    except (EOFError, KeyboardInterrupt):
+        pass
+    try:
+        os.execv(sys.executable,
+                 [sys.executable] + ([] if yollar.donmus() else [__file__]))
+    except Exception as e:                # noqa: BLE001
+        print("")
+        print("  Otomatik yeniden başlatılamadı (%s)." % e)
+        print("  Lütfen programı kapatıp yeniden açın.")
+        bekle()
+    return 0
+
+
 def main():
     konsolu_utf8_yap()
     if "--tani" in sys.argv:
@@ -422,8 +536,50 @@ def main():
         bekle()
         return 0
 
-    # İlk çalıştırmada bölümü teyit ettir. Tek soru, tek sefer.
-    if not bolum_teyidi(nerede):
+    # --- Bölüm ve belge teyidi: SİCİL/ŞİFREDEN ÖNCE ----------------
+    # Yanlış bölümün belgeleriyle OBİS'e girmenin anlamı yok; üstelik
+    # kullanıcıdan şifresini istemeden önce neyle çalışacağımızı
+    # göstermek doğrusu.
+    import kaynaklar
+
+    def sor(istem):
+        # Ctrl+C / kapanan stdin'de None dönüyoruz: belge akışı bunu
+        # "vazgeçildi" diye anlıyor. Boş dize döndürülseydi döngü
+        # "boş cevap" sanıp sonsuza kadar sormaya devam ederdi.
+        try:
+            return input(istem)
+        except (EOFError, KeyboardInterrupt):
+            print("")
+            return None
+
+    karar = kaynak_teyidi(sor)
+    if karar == "dur":
+        print("")
+        print("İptal edildi; hiçbir şey değişmedi.")
+        bekle()
+        return 1
+    if karar == "kur":
+        if not belge_akisi(sor):
+            print("")
+            print("Kurulum tamamlanmadı; eski belgeler duruyor.")
+            bekle()
+            return 1
+        print("")
+        print("=" * 70)
+        print("  Kurulum tamamlandı. Program YENİDEN BAŞLATILMALI.")
+        print("")
+        print("  Sebep: yönetmelik ve ders programı ayarları program")
+        print("  açılırken bir kez okunuyor. Yeni bölümün planıyla")
+        print("  hesaplayabilmek için taze bir başlangıç gerekiyor.")
+        print("=" * 70)
+        return _yeniden_baslat()
+
+    # Yerel kurulum varsa eksik çözülmüş dosyaları ŞİMDİ üret: artık
+    # modüller doğru profille yüklendi.
+    if not kaynaklar.turetilenleri_hazirla():
+        print("")
+        print("Kurulum eksik: müfredat belgesi bulunamadı.")
+        print("python kurulum.py --denetle")
         bekle()
         return 1
 

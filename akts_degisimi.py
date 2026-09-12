@@ -54,7 +54,14 @@ import os
 import yollar
 import yonetmelik as ym
 
-REFERANS_YOLU = str(yollar.veri("akts_referans.json"))
+def referans_yolu():
+    """Kohort AKTS fotoğrafının yolu.
+
+    Fonksiyon, çünkü modül düzeyinde hesaplanan bir yol import anında
+    DONAR; yerel kurulum katmanı sonradan devreye girdiğinde eski yeri
+    göstermeye devam ederdi.
+    """
+    return str(yollar.veri("akts_referans.json"))
 
 # NOT: Bir zamanlar "taban öğrenci" (hiç kalmamış bir öğrencinin
 # transkripti) elle kodluydu. Ölçüldü: her
@@ -67,13 +74,14 @@ REFERANS_YOLU = str(yollar.veri("akts_referans.json"))
 TABAN_OGRENCI = None
 
 
-def referanslari_yukle(yol=REFERANS_YOLU):
+def referanslari_yukle(yol=None):
     """Kohort AKTS fotoğrafları: {giris_yili(int): {ders_kodu: akts}}.
 
     Transkripti olmayan bir kohort için (örn. danışmanın listesinde 2024
     girişli var ama o dersi henüz alan olmamış) eski değeri buradan
     okuyoruz. Dosya yoksa boş sözlük döner - sistem yine çalışır.
     """
+    yol = yol or referans_yolu()
     if not os.path.exists(yol):
         return {}
     try:

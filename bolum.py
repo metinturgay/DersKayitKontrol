@@ -38,8 +38,20 @@ class ProfilYok(SystemExit):
     """Profil bulunamadı ya da okunamadı."""
 
 
-def yol():
-    return yollar.veri(PROFIL_ADI)
+def yol(yazmak_icin=False):
+    """Bölüm profilinin yolu.
+
+    Okurken yerel kurulum varsa oradan, yoksa gömülüden. Yazarken HER
+    ZAMAN yerel klasöre: gömülü kök exe'de geçici bir klasördür ve
+    program kapanınca silinir - profil yazıldı sanılıp kaybolurdu.
+    """
+    return (yollar.veri_yaz(PROFIL_ADI) if yazmak_icin
+            else yollar.veri(PROFIL_ADI))
+
+
+def kaynak():
+    """Profil nereden okundu? ('yerel kurulum' / 'gömülü')"""
+    return yollar.veri_kaynagi(PROFIL_ADI)
 
 
 def yukle(zorla=False):

@@ -29,7 +29,8 @@ DEPO = os.path.dirname(BURASI)
 # öğrenci verisi taşıyan hiçbir dosya bu listede olmamalı.
 KOD = [
     "ders_kayit.py", "ozet.py", "rapor.py", "yonetmelik.py",
-    "bolum.py", "kurulum.py", "eslestirme.py", "mufredat_arsivi.py",
+    "bolum.py", "kurulum.py", "kaynaklar.py", "eslestirme.py",
+    "mufredat_arsivi.py",
     "ornek_uret.py", "ornek/gorsel_uret.py",
     "mufredat.py", "ders_programi.py", "akts_degisimi.py",
     "panoyu_yenile.py", "mufredat_denetle.py", "program_denetle.py",
@@ -53,6 +54,7 @@ TESTLER = [
     "testler/test_mufredat.py", "testler/test_pano.py",
     "testler/test_kohort.py", "testler/test_bolum.py",
     "testler/test_arsiv.py", "testler/test_kurulum.py",
+    "testler/test_yollar.py", "testler/test_kaynaklar.py",
     "testler/sentetik_transkript.py",
     "testler/sentetik_mufredat.py",
     "testler/pano_calistir.js",
@@ -99,6 +101,11 @@ testler/ornek_transkript.html
 bolum_onayi.json
 veri/bolum.taslak.json
 
+# --- Kendi kurulumunuz ---
+# Araci acip kendi belgelerinizi verdiginizde buraya yaziliyor: kendi
+# bolumunuzun belgeleri ve cozulmus halleri. Depoya girmemeli.
+veri-yerel/
+
 # --- Bölüm belgeleri (büyük ikili dosyalar) ---
 # Çözülmüş hâlleri veri/*.json olarak depoda duruyor; belgelerin
 # kendisi bölümün malıdır, yayımlamak size kalmış.
@@ -129,7 +136,11 @@ YASAK = ["cikti", ".env", "chrome-profili", "__pycache__",
          # Bölüm teyidi kurulumun kendisine aittir. Kopyalanırsa karşı
          # taraf "bu sizin bölümünüz mü?" sorusunu HİÇ görmez ve başka
          # bir bölümün planıyla çalıştığını fark etmez.
-         "bolum_onayi.json"]
+         "bolum_onayi.json",
+         # Danismanin kendi kurulumu: kendi bolumunun belgeleri ve
+         # cozulmus hâlleri. Kopyalanirsa karsi taraf BASKA bir bolumun
+         # planiyla calisir ve bunu fark etmez.
+         "veri-yerel"]
 
 OKUBENI = u"""# Ders Kayıt Kontrol — kurulum
 
@@ -281,7 +292,8 @@ def _sizinti_denetimi(klasor):
                                  % (ad, bagil,
                                     (m if isinstance(m, str)
                                      else m[0])[:24]))
-    for ad in (".env", "chrome-profili", "cikti", "bolum_onayi.json"):
+    for ad in (".env", "chrome-profili", "cikti", "bolum_onayi.json",
+               "veri-yerel"):
         if os.path.exists(os.path.join(klasor, ad)):
             bulgu.append("[HATA] yasak: " + ad)
     if not bulgu:
