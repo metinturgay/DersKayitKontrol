@@ -332,10 +332,113 @@ def _sizinti_denetimi(klasor):
                "veri-yerel"):
         if os.path.exists(os.path.join(klasor, ad)):
             bulgu.append("[HATA] yasak: " + ad)
+
+    ad_bulgu, ad_sayisi = _gercek_ad_denetimi(klasor)
+    bulgu += ad_bulgu
+
     if not bulgu:
-        return ["%d metin dosyası tarandı, bulgu yok." % bakilan,
+        ozet = ["%d metin dosyası tarandı, bulgu yok." % bakilan,
                 "Öğrenci verisi, şifre ve oturum bilgisi YOK."]
+        ozet.append("Gerçek öğrenci adı taraması: %s"
+                    % ("%d ad karşılaştırıldı, eşleşme yok." % ad_sayisi
+                       if ad_sayisi else
+                       "ATLANDI - cikti/ yok, adlar DOĞRULANMADI."))
+        return ozet
     return sorted(set(bulgu))
+
+
+def _gercek_ad_denetimi(klasor):
+    """Yayımlanacak ağaçta GERÇEK öğrenci ADI var mı?
+
+    Bu denetim neden var: yukarıdaki desenler numara, şifre ve TC arar -
+    AD ARAMAZ. İki gerçek öğrencinin adı kod yorumlarının içinde
+    ("X 7. dönemde 16/32 AKTS seçmişti") yayına kadar geldi ve her
+    taramadan "temiz" raporuyla geçti. Ad için genel bir desen yazmak
+    da işe yaramaz: büyük harfli her dize ders adıdır.
+
+    Tek güvenilir yol karşılaştırmak: cikti/ altında danışmanın kendi
+    öğrencilerinin sayfaları var. Adları oradan okuyup yayımlanacak
+    ağaçta arıyoruz. cikti/ yoksa denetim yapılamaz ve bunu SÖYLÜYORUZ -
+    sessizce "temiz" demiyoruz.
+
+    Döndürür: (bulgular, karşılaştırılan_ad_sayısı)
+    """
+    import glob
+    import re
+
+    cikti = os.path.join(BURASI, "cikti")
+    sayfalar = sorted(glob.glob(os.path.join(cikti, "ders_sayfasi_*.html")))
+    if not sayfalar:
+        return [], 0
+
+    # PROJENİN KENDİ AYRIŞTIRICISI kullanılıyor, elle yazılmış regex
+    # DEĞİL. Önce iki regex denendi: biri "ADI SOYADI" etiketini aradı
+    # (sayfalarda öyle bir etiket yok, 0 ad), ikincisi "Adı Soyadı"
+    # etiketini aradı (60 dosyanın 34'ünü çözdü). Eksik kapsamla
+    # "temiz" demek, bu denetimin var olma sebebini ortadan kaldırır.
+    # ders_kaydini_coz 60/60 çözüyor - zaten OBİS sayfasını okumak
+    # onun işi.
+    try:
+        import ders_kayit as dk
+    except Exception as hata:                              # noqa: BLE001
+        return (["[HATA] ad denetimi ÇALIŞTIRILAMADI (ders_kayit "
+                 "içe aktarılamadı: %s). Yayımlamadan önce çözün."
+                 % hata], 0)
+
+    adlar = set()
+    for sayfa in sayfalar:
+        try:
+            k = dk.ders_kaydini_coz(
+                io.open(sayfa, encoding="utf-8", errors="replace").read())
+        except Exception:                                  # noqa: BLE001
+            continue
+        ad = " ".join((k.get("ad") or "").split())
+        if ad and " " in ad:
+            adlar.add(ad)
+
+    if len(adlar) < len(sayfalar):
+        # Sessizce eksik taramaktansa gürültülü şikâyet.
+        return (["[HATA] ad denetimi EKSİK: %d sayfanın yalnız %d'inden "
+                 "ad çıkarıldı. Kalanlar denetlenmedi."
+                 % (len(sayfalar), len(adlar))], len(adlar))
+
+    # Boşluk toleransı: kaynak sayfalarda ad çift/üçlü boşlukla
+    # geçebiliyor, kodda tek boşlukla yazılmış olabilir; ikisi de
+    # eşleşmeli.
+    #
+    # BURAYA ÖRNEK AD YAZMAYIN. Yazıldı: bu toleransı açıklarken örnek
+    # diye gerçek bir öğrencinin adı kondu ve denetim kendi kaynağını
+    # yakaladı. Aynı tuzak bu dosyada bir kez daha işledi (temizlenen
+    # proje adı, temizliği anlatan yorumla geri geldi). Bir sızıntıyı
+    # açıklayan metin, sızıntının kendisini taşımamalı.
+    desenler = [(ad, re.compile(r"\s+".join(re.escape(p)
+                                            for p in ad.split())))
+                for ad in adlar]
+
+    bulgu = []
+    for dizin, altlar, dosyalar in os.walk(klasor):
+        altlar[:] = [a for a in altlar if a != "__pycache__"]
+        for d in dosyalar:
+            if not d.endswith((".py", ".md", ".js", ".json", ".html",
+                               ".txt", ".example", ".gitignore")):
+                continue
+            yol = os.path.join(dizin, d)
+            try:
+                icerik = io.open(yol, encoding="utf-8",
+                                 errors="replace").read()
+            except OSError:
+                continue
+            for ad, desen in desenler:
+                m = desen.search(icerik)
+                if m:
+                    # Adın KENDİSİNİ rapora yazmıyoruz; rapor ekrana
+                    # basılıyor ve kopyalanıp paylaşılabiliyor. Yeri
+                    # söylemek düzeltmek için yeter.
+                    satir = icerik[:m.start()].count("\n") + 1
+                    bulgu.append("[HATA] GERÇEK ÖĞRENCİ ADI: %s:%d (%s...)"
+                                 % (os.path.relpath(yol, klasor), satir,
+                                    ad.split()[0][:2]))
+    return bulgu, len(adlar)
 
 
 def main():

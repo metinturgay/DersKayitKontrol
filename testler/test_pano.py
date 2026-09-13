@@ -1204,10 +1204,16 @@ def _cakisma_devam_kontrolu():
 def _sessiz_temiz_var_mi():
     """Dönem kotası dolmamışken "temiz" görünen öğrenci olmamalı.
 
-    Bu sınıf hata iki kez çıktı: bir öğrenci 7. dönemde 16/32 AKTS
-    seçmişti, bir öğrenci 5. dönemde 24/30 seçmişti - ikisi de panoda
-    temiz görünüyordu. Sessiz kalan bir eksik, yanlış uyarıdan daha
+    Bu sınıf hata iki kez çıktı: bir öğrenci 7. dönemde 16/32 AKTS,
+    bir başkası 5. dönemde 24/30 seçmişti - ikisi de panoda temiz
+    görünüyordu. Sessiz kalan bir eksik, yanlış uyarıdan daha
     tehlikeli: danışman bakmadan geçiyor.
+
+    Vakalar ADSIZ anlatılıyor. Burada iki gerçek öğrencinin adı
+    yazılıydı ve dosya yayımlandı; 60 kişilik bir bölümde ad + dönem +
+    kesin AKTS o kişiyi doğrudan tanınır kılar. Öğrenci numarası
+    arayan denetimler bunu göremez - ad deseni yoktur. Yeni bir vaka
+    eklerken adı DEĞİL, yalnız sayıyı yazın.
 
     Sabit sayı beklemiyoruz (öğrenciler kayıt boyunca ders ekliyor);
     değişmezi sınıyoruz: kotası açık VE dolduracak ders varsa, en az bir
