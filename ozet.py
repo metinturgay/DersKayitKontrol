@@ -847,8 +847,11 @@ def ogrenci_ozeti(kayit, acilan_donemler=ym.GUZ_DONEMLERI,
     # Dönem kotası boşluğu - "yapı biliniyor mu" kapısının DIŞINDA.
     # DONEM_KOMPOZISYONU yalnızca 7. dönemi tanıyor; 1-6. dönemlerde
     # secmeli_eksik hesaplanamadığı için eksik_akts>0 olsa bile hiçbir
-    # uyarı çıkmıyordu (bir öğrenci 24/30, alabileceği 20 açık ders vardı,
-    # pano onu "temiz" gösteriyordu). Boş bırakılan her AKTS mezuniyeti
+    # uyarı çıkmıyordu (bir öğrenci 5. dönemde 24/30 seçmişti, alabileceği
+    # 20 açık ders vardı, pano onu "temiz" gösteriyordu). Vakayı ADSIZ
+    # yazıyoruz: 60 kişilik bir bölümde ad + dönem + AKTS o kişiyi
+    # tanınır kılar ve bu dosya yayımlanıyor.
+    # Boş bırakılan her AKTS mezuniyeti
     # geciktirir. Ders SEÇMİYORUZ, yalnızca boşluğu bildiriyoruz.
     if komp["eksik_akts"] > 0 and not komp["secmeli_eksik"] \
             and not komp["zorunlu_eksik"] and not komp["tos_eksik"]:

@@ -251,7 +251,9 @@ def main():
             y.secmeli_mi({"ders_no": "2709735",
                           "ders_adi": "LORENTZ GEOMETRİ I (SEÇ)"}))
 
-    # bir öğrenci'ın gerçek seçimi: 2 bölüm seçmeli + 1 TOS + 1 zorunlu
+    # Gerçek bir 7. dönem seçimi: 2 bölüm seçmeli + 1 TOS + 1 zorunlu.
+    # ADSIZ: bu dosya yayımlanıyor ve 60 kişilik bir bölümde ad +
+    # dönem + ders listesi kişiyi doğrudan tanınır kılar.
     kat7 = [
         {"ders_no": "2709753", "ders_adi": "MATEMATİK UYGULAMALARI I",
          "akts": 4, "donem": "7. Dönem Dersleri", "yesil_yazi": False},
@@ -264,10 +266,10 @@ def main():
         {"ders_no": "2709735", "ders_adi": "LORENTZ GEOMETRİ I (SEÇ)",
          "akts": 4, "donem": "7. Dönem Dersleri", "yesil_yazi": True},
     ]
-    gonul = [{"ders_no": k} for k in
+    secim7 = [{"ders_no": k} for k in
              ("2709720", "2709735", "2709746", "2709753")]
-    c = y.donem_kompozisyonu_denetle(7, gonul, kat7)
-    kontrol("öğrenci 16/32 AKTS", (16, 32), (c["secilen_akts"], c["toplam_akts"]))
+    c = y.donem_kompozisyonu_denetle(7, secim7, kat7)
+    kontrol("16/32 AKTS", (16, 32), (c["secilen_akts"], c["toplam_akts"]))
     kontrol("  zorunlu tamam", [], c["zorunlu_eksik"])
     kontrol("  TOS 1 seçilmiş, eksik yok", (1, 0),
             (len(c["tos_secilen"]), c["tos_eksik"]))
