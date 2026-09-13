@@ -68,6 +68,29 @@ def main():
     kontrol("7. yarıyıl notu var", 1, len(notlar7))
     kontrol("  not 6 seçmeli diyor", True, "altı (6)" in notlar7[0])
     kontrol("  not 1 TOS diyor", True, "bir (1) tane T.O.S" in notlar7[0])
+    # GERİLEME TESTİ - BELGEYİ YENİDEN ÇÖZEREK. _hucreler() gridSpan'i
+    # genişletirken birleşik hücrenin metnini kapsadığı HER sütuna
+    # kopyalıyor; satırı birleştirirken bu, aynı cümleyi tekrar
+    # ettiriyordu. Ölçüldü: 6 sütuna yayılan not, listeye cümlesi 6 kez
+    # yazılmış hâlde giriyordu ve hiçbir test kızmıyordu.
+    #
+    # DİKKAT - burada mf.yukle() KULLANILMIYOR. Bu dosyanın geri kalanı
+    # veri/mufredat.json'u okuyor, yani ÇÖZÜMLEYİCİYİ değil ÇIKTIYI
+    # sınıyor. Tekrarı json üzerinden kontrol etmeyi denedim: düzeltmeyi
+    # bilerek geri aldığımda test yine geçti, çünkü json zaten temizdi.
+    # Ölü koruma. Çözümleyicinin kendisini çağırmak şart.
+    try:
+        ham = mf.oku()
+    except Exception as hata:                              # noqa: BLE001
+        kontrol("belge yeniden çözülebiliyor", True, False)
+        print("          %s" % hata)
+    else:
+        kontrol("belge yeniden çözüldü", True, bool(ham["notlar"]))
+        for yy, n in ham["notlar"]:
+            kontrol("  %d. yarıyıl notu tekrarsız (belgeden)" % yy,
+                    1, n.count("Not:"))
+        kontrol("  çözümleyici çıktısı json ile aynı",
+                v["notlar"], [list(x) for x in ham["notlar"]])
 
     print("")
     print("  === TOS listesi ===")

@@ -1349,5 +1349,25 @@
    "Not: Öğrenci bu dönem M.U. II dersini ve altı (6) tane seçmeli ders ve bir (1) tane T.O.S. ders almak zorundadır. Bu dönem için 2 AKTS fazla alınacaktır. Bu durum, T.O.S. derslerinin AKTS’leri 4 kredi olduğundandır."
   ]
  ],
- "genel_toplam_akts": 244
+ "genel_toplam_akts": 244,
+ "tani": {
+  "tablo": 12,
+  "basligi_cozulen_tablo": 12,
+  "yariyil_basligi": 12,
+  "atlanan_satir": 66,
+  "basliksiz_tablo_ornegi": null,
+  "cozulemeyen_baslik": [
+   "Güz ve Bahar Yarıyıllarda Okutulacak Dersler",
+   "1. SINIF",
+   "1. SINIF",
+   "2. SINIF",
+   "2. SINIF",
+   "3. SINIF",
+   "3. SINIF",
+   "3. SINIF",
+   "3. SINIF",
+   "4. SINIF",
+   "4. SINIF"
+  ]
+ }
 }
