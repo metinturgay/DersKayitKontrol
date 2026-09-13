@@ -379,7 +379,17 @@ def oku(docx_yolu=None):
         gerekli = max(harita.values()) + 1
 
         for hucreler in satirlar:
-            birlesik = " ".join(h for h in hucreler if h).strip()
+            # ARDIŞIK TEKRARLAR TEKE İNİYOR. _hucreler() gridSpan'i
+            # genişletirken birleşik hücrenin metnini kapsadığı HER
+            # sütuna kopyalıyor; bu sütun eşleştirmesi için doğru ama
+            # metni birleştirirken aynı cümleyi tekrar ettiriyor.
+            # Ölçüldü: 6 sütuna yayılan bir "Not:" satırı, notlar
+            # listesine cümlesi 6 kez yazılmış hâlde giriyordu.
+            parcalar = []
+            for h in hucreler:
+                if h and (not parcalar or parcalar[-1] != h):
+                    parcalar.append(h)
+            birlesik = " ".join(parcalar).strip()
             if ust(birlesik).startswith("NOT"):
                 if (yariyil, birlesik) not in notlar:
                     notlar.append((yariyil, birlesik))
@@ -441,7 +451,12 @@ def oku(docx_yolu=None):
         if m:
             genel = int(m.group(1))
 
-    veri = {"kaynak": str(yol), "dersler": dersler,
+    # Yalnız DOSYA ADI yazılıyor, mutlak yol değil. str(yol) yazılıyordu
+    # ve mufredat.json yayımlanan bir dosya olduğu için üreten makinenin
+    # kullanıcı adını ve klasör ağacını dışarı veriyordu - ölçüldü,
+    # GitHub'a gidecek sürümde "C:\Users\...\PROJELER\..." duruyordu.
+    # Alanın işi hangi belgeden üretildiğini söylemek; onu ad da söyler.
+    veri = {"kaynak": Path(yol).name, "dersler": dersler,
             "yariyillar": yariyillar, "notlar": notlar,
             "genel_toplam_akts": genel, "tani": tani}
     _makul_mu(veri, yol)
