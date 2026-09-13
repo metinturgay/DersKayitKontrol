@@ -130,16 +130,21 @@ python-dotenv
 openpyxl
 """
 
-# Yayımlanan deponun .env örneği. Ana depo kökündeki .env.example ALTI
-# PROJEYE birden hizmet ediyor ve on değişken belgeliyor; bu aracın kodu
-# bunların yalnız ÜÇÜNÜ okuyor (ölçüldü). Kalan yedisi diger-arac ve
-# diger-arac'ne ait; biri de olmayan bir README bölümüne atıf yapıyor.
+# Yayımlanan deponun .env örneği. Ana depo kökündeki .env.example bu
+# depodaki araçtan FAZLASINA hizmet ediyor ve on değişken belgeliyor;
+# bu aracın kodu bunların yalnız ÜÇÜNÜ okuyor (ölçüldü). Kalanlar
+# çalışma ağacındaki başka araçlara ait.
 #
-# Kök dosyayı budamak YANLIŞ olurdu - orası sizin kendi kurulum
-# belgeniz ve o yedi değişken gerçekten kullanılıyor. Budama yayım
-# anında yapılıyor: dışarıya yalnız bu projenin okuduğu ayarlar gidiyor.
-# Çalışmayan ayar, çalışan ayardan kötüdür; okuyan kişi denediği şeyin
-# neden etkisiz kaldığını anlayamaz.
+# Kök dosyayı budamak YANLIŞ olurdu - orası ortak kurulum belgesi ve o
+# değişkenler gerçekten kullanılıyor; budamak kendi kurulumumuzu
+# bozardı (denendi, geri alındı). Budama yayım anında yapılıyor:
+# dışarıya yalnız bu projenin okuduğu ayarlar gidiyor. Çalışmayan ayar,
+# çalışan ayardan kötüdür; okuyan kişi denediği şeyin neden etkisiz
+# kaldığını anlayamaz.
+#
+# NOT: buraya diğer araçların ADINI YAZMAYIN. Bir kez yazıldı ve
+# .env.example'dan temizlenen ad bu yorumla geri geldi - yayımlanan
+# dosya, temizlediği şeyi kendi açıklamasında taşıyordu.
 YAYIN_ENV_ORNEGI = u"""# =====================================================================
 #  ORNEK DOSYA - bunu .env olarak kopyalayip kendi bilgilerinizi yazin.
 #  .env dosyasi git tarafindan takip edilmez.
