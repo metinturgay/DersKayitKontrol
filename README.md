@@ -21,6 +21,7 @@ yoktur.*
 
 ## İçindekiler
 
+- [İndir ve çalıştır (Python gerekmez)](#indir)
 - [Neyi çözüyor?](#neyi-çözüyor)
 - [Ne yapar, ne YAPMAZ](#ne-yapar-ne-yapmaz)
 - [Ekran görüntüleri](#ekran-görüntüleri)
@@ -30,6 +31,67 @@ yoktur.*
 - [Gizlilik ve öğrenci verisi](#gizlilik-ve-öğrenci-verisi)
 - [Testler](#testler)
 - [Bilinen sınırlar](#bilinen-sınırlar)
+
+---
+
+<a id="indir"></a>
+
+## İndir ve çalıştır (Python gerekmez)
+
+Programlama bilmenize gerek yok. Tek dosya indirip çift tıklıyorsunuz.
+
+**1.** [**Releases sayfasından**](../../releases/latest) `DanismanOzeti.exe`
+dosyasını indirin (~45 MB).
+
+**2.** Boş bir klasöre koyun — masaüstünde `DanismanOzeti` diye bir klasör
+açıp içine atmak yeterli. Program çalışırken yanına `cikti/` klasörü
+oluşturacak; İndirilenler klasörünün karmaşasında kalmasın.
+
+**3.** Çift tıklayın.
+
+### Windows "Bu dosyayı korudum" derse
+
+İlk çalıştırmada **mavi bir ekran** çıkar:
+
+> **Windows PC'nizi korudu**
+> Microsoft Defender SmartScreen tanınmayan bir uygulamanın başlatılmasını
+> engelledi.
+
+Bu, programda bir sorun olduğu anlamına **gelmez**. Windows, parası ödenmiş
+bir imza sertifikası taşımayan her yeni programa bunu yapar; bu araç
+imzasızdır. Geçmek için:
+
+1. Mavi ekrandaki **"Daha fazla bilgi"** yazısına tıklayın
+   *(Çalıştır düğmesi bu yazıya tıklayana kadar görünmez — pek çok kişi
+   burada vazgeçiyor.)*
+2. Altta beliren **"Yine de çalıştır"** düğmesine basın.
+
+Bunu yalnız bir kez yapmanız gerekir.
+
+### Antivirüs programınız silerse
+
+Bazı antivirüs programları bu tür tek dosyalık Python programlarını
+yanlışlıkla zararlı sanıp karantinaya alır. Dosya kaybolduysa antivirüs
+karantinasına bakın ve geri yükleyin; kaynağın tamamı bu depoda açık
+durduğu için ne yaptığını satır satır görebilirsiniz.
+
+Buna hiç girmek istemiyorsanız [kaynaktan çalıştırma](#kurulum--adım-adım)
+yolu da var.
+
+### Sonra ne oluyor
+
+Program açılınca sırayla sorar:
+
+1. **Hangi bölüm?** Matematik için hazır gelir; başka bölümdeyseniz kendi
+   belgelerinizi verirsiniz (okutulacak dersler + ders programı). Yeniden
+   derlemeye gerek yok.
+2. **Sicil ve şifreniz** — OBİS'e girmek için. Hiçbir yere kaydedilmez,
+   yalnız o çalıştırma boyunca bellekte durur.
+
+Sonra öğrencilerinizi tek tek okur ve `cikti/danisman_ozeti.html` panosunu
+üretip açar.
+
+**Gereken tek şey:** bilgisayarınızda Google Chrome kurulu olması.
 
 ---
 
@@ -381,10 +443,17 @@ sayfayı hiçbir hata vermeden bomboş açtırır.
   `ders_kayit.py` güncellenmelidir.
 - **Windows'ta geliştirildi ve sınandı.** Linux/macOS'ta çalışması
   beklenir ama denenmedi; `exe_yap.py` yalnız Windows içindir.
-- **Exe bölüme özgüdür.** Müfredat, ders programı ve bölüm profili exe'nin
-  *içine* gömülür. Başka bir bölüme vermeden önce o bölümün belgeleriyle
-  kurulum yapıp yeniden derleyin. Açılış ekranı ve pano başlığı hangi
-  bölüm için yapılandırıldığını yazar.
+- **Exe imzasızdır.** Windows SmartScreen ilk çalıştırmada engeller ve
+  *Çalıştır* düğmesini "Daha fazla bilgi" yazısının arkasına gizler
+  (bkz. [İndir ve çalıştır](#indir)). Bazı
+  antivirüs programları da tek dosyalık PyInstaller çıktılarını yanlışlıkla
+  karantinaya alır. İkisinin de kalıcı çözümü ücretli bir kod imzalama
+  sertifikasıdır; bu depoda yoktur.
+- **Exe'nin içinde Matematik bölümünün belgeleri gömülüdür**, ama başka bir
+  bölüm için YENİDEN DERLEMEYE GEREK YOKTUR. Program açılışta bölümü sorar;
+  onaylamazsanız kendi belgelerinizi ister ve exe'nin yanındaki
+  `veri-yerel/` klasörüne kurar. Gömülü olanlar yalnızca varsayılandır.
+  Açılış ekranı ve pano başlığı hangi bölüm için yapılandırıldığını yazar.
 - **Yalnız Matematik bölümünde gerçek veriyle çalıştırılmıştır.** Başka
   bölümlerin belgeleriyle kurulum, sentetik belgelerle sınanmıştır
   (`test_kurulum.py`); gerçek bir başka bölüm verisiyle denenmedi.
