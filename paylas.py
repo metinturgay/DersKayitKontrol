@@ -130,6 +130,33 @@ python-dotenv
 openpyxl
 """
 
+# Yayımlanan deponun .env örneği. Ana depo kökündeki .env.example ALTI
+# PROJEYE birden hizmet ediyor ve on değişken belgeliyor; bu aracın kodu
+# bunların yalnız ÜÇÜNÜ okuyor (ölçüldü). Kalan yedisi diger-arac ve
+# diger-arac'ne ait; biri de olmayan bir README bölümüne atıf yapıyor.
+#
+# Kök dosyayı budamak YANLIŞ olurdu - orası sizin kendi kurulum
+# belgeniz ve o yedi değişken gerçekten kullanılıyor. Budama yayım
+# anında yapılıyor: dışarıya yalnız bu projenin okuduğu ayarlar gidiyor.
+# Çalışmayan ayar, çalışan ayardan kötüdür; okuyan kişi denediği şeyin
+# neden etkisiz kaldığını anlayamaz.
+YAYIN_ENV_ORNEGI = u"""# =====================================================================
+#  ORNEK DOSYA - bunu .env olarak kopyalayip kendi bilgilerinizi yazin.
+#  .env dosyasi git tarafindan takip edilmez.
+# =====================================================================
+#
+#  Exe kullaniyorsaniz bu dosyaya HIC GEREK YOK; program sicil ve
+#  sifreyi calisirken sorar ve hicbir yere yazmaz. Bu dosya yalniz
+#  kaynaktan calistiranlar icin.
+
+# --- OBIS giris bilgileri ---
+OBIS_KULLANICI=personel_numaraniz
+OBIS_SIFRE=sifreniz
+
+# --- OBIS adresi (sistem tasinirsa burayi guncelleyin) ---
+OBIS_BASE_URL=https://obis2.selcuk.edu.tr
+"""
+
 # ASLA kopyalanmayacaklar - kod değil, karar.
 YASAK = ["cikti", ".env", "chrome-profili", "__pycache__",
          "testler/ornek_pano.html", "testler/ornek_transkript.html",
@@ -346,15 +373,21 @@ def main():
     for ad in listeler:
         kopyala(ad)
     for ad in DEPO_DOSYALARI:
+        # .env.example yayın kipinde KOPYALANMIYOR, üretiliyor
+        # (bkz. YAYIN_ENV_ORNEGI): kökteki sürüm altı projeyi birden
+        # belgeliyor, dışarıya yalnız bu projenin okuduğu üç ayar gitmeli.
+        if yayin and ad == ".env.example":
+            continue
         kopyala(ad, DEPO)
 
     if yayin:
         # GitHub'a konacak ağaç: kendi .gitignore'u, kendi
-        # requirements'i, README ve örnek görseller.
+        # requirements'i, kendi .env örneği, README ve örnek görseller.
         for ad in YAYIN_EKLERI:
             kopyala(ad)
         for ad, icerik in ((".gitignore", YAYIN_GITIGNORE),
-                           ("requirements.txt", YAYIN_REQUIREMENTS)):
+                           ("requirements.txt", YAYIN_REQUIREMENTS),
+                           (".env.example", YAYIN_ENV_ORNEGI)):
             yol = os.path.join(hedef, ad)
             with open(yol, "w", encoding="utf-8") as f:
                 f.write(icerik)
